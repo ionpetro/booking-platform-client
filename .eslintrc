@@ -1,0 +1,28 @@
+{
+  "extends": ["airbnb-base", "prettier", "plugin:vue/base"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "no-console": "off",
+    "no-underscore-dangle": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {"devDependencies": ["**/__tests__/**", "fixtures/**", "db/**", "scripts/**"]}
+    ]
+  },
+  "env": {
+    "node": true
+  },
+  "parserOptions": {
+    "impliedStrict": false,
+    "sourceType": "module"
+  },
+  "overrides": [
+    {
+      "files": ["*test.js", "*spec.js", "*fun.js"],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
+}
