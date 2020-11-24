@@ -21,4 +21,18 @@ const router = new Router({
   ]
 });
 
+router.beforeEach((to, from, next) => {
+  const publicPages = ['/login'];
+  const authRequired = !publicPages.includes(to.path);
+  const loggedIn = localStorage.getItem('user') || sessionStorage.getItem('user');
+
+  // if you are not logged in and try to access restricted page
+  // you are redirected to login page
+  if (authRequired && !loggedIn) {
+    next('/login');
+  } else {
+    next();
+  }
+});
+
 export {router as default};
