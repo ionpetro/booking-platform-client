@@ -25,7 +25,7 @@
 
 <script>
 import User from '../models/user';
-import AuthService from './auth.service';
+import AuthService from '../shared/services/auth.service';
 
 const authService = new AuthService();
 

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import AuthService from '../login/auth.service';
+import AuthService from '../shared/services/auth.service';
 
 const authService = new AuthService();
 export default {
