@@ -17,9 +17,6 @@ export default class AuthService {
             sessionStorage.setItem('user', JSON.stringify(response.data));
           }
         }
-      })
-      .catch(err => {
-        console.log(err);
       });
   }
 
