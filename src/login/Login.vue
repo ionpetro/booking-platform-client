@@ -11,7 +11,7 @@
         <input type="password" v-model="user.password" />
       </div>
       <div>
-        <input type="checkbox" />
+        <input @click="remember = !remember" type="checkbox" />
         <label for="rememberMe">Remember Me</label>
       </div>
       <button type="submit">Sign In</button>
@@ -31,18 +31,22 @@ export default {
     return {
       loading: false,
       user: new User('', ''),
-      remember: false
+      remember: false,
+      message: ''
     };
   },
   methods: {
     handleLogin() {
-      console.log(authService);
       this.loading = true;
       if (this.user.username && this.user.password) {
-        authService.login(this.user, this.remember).then(response => {
-          this.loading = false;
-          return Promise.resolve(response);
-        });
+        authService.login(this.user, this.remember).then(
+          () => {
+            this.$router.push('/');
+          },
+          error => {
+            this.message = error.message || error.toString();
+          }
+        );
       }
     }
   }

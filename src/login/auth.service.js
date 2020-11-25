@@ -10,10 +10,12 @@ export default class AuthService {
         password: user.password
       })
       .then(response => {
-        if (remember) {
-          console.log('save to local storage', response);
-        } else {
-          console.log('save to session storage', response);
+        if (response.data.jwt) {
+          if (remember) {
+            localStorage.setItem('user', JSON.stringify(response.data));
+          } else {
+            sessionStorage.setItem('user', JSON.stringify(response.data));
+          }
         }
       })
       .catch(err => {
