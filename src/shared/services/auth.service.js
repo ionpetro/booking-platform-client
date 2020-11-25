@@ -17,6 +17,7 @@ export default class AuthService {
             sessionStorage.setItem('user', JSON.stringify(response.data));
           }
         }
+        return response.data;
       });
   }
 
