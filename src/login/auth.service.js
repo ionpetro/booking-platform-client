@@ -17,7 +17,15 @@ export default class AuthService {
         }
       })
       .catch(err => {
-        console.error(err);
+        console.log(err);
       });
+  }
+
+  logout() {
+    if (sessionStorage.getItem('user')) {
+      sessionStorage.removeItem('user');
+    } else {
+      localStorage.removeItem('user');
+    }
   }
 }
