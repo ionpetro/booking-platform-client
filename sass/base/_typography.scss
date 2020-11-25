@@ -1,0 +1,106 @@
+html {
+  font-family: $font-stack;
+  font-size: $base-font-size;
+  color: $secondary;
+  line-height: 1.5;
+  font-weight: $light;
+
+  // medium breakpoint
+  @media only screen and (max-width: $medium-breakpoint) {
+    h1 {
+      font-size: 44px;
+    }
+
+    h2 {
+      font-size: 36px;
+    }
+
+    h3 {
+      font-size: 30px;
+    }
+
+    h4 {
+      font-size: 24px;
+    }
+
+    h5 {
+      font-size: 20px;
+    }
+
+    small {
+      font-size: 14px;
+    }
+
+    .extra-small {
+      font-size: 10px;
+    }
+  }
+
+  // small breakpoint
+  @media only screen and (max-width: $small-breakpoint) {
+    h1 {
+      font-size: 40px;
+    }
+
+    h2 {
+      font-size: 32px;
+    }
+
+    h3 {
+      font-size: 28px;
+    }
+
+    h4 {
+      font-size: 24px;
+    }
+
+    h5 {
+      font-size: 20px;
+    }
+
+    small {
+      font-size: 14px;
+    }
+
+    .extra-small {
+      font-size: 10px;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: $bold;
+}
+
+h1 {
+  font-size: 48px;
+  letter-spacing: -0.005em;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+small {
+  font-size: 12px;
+}
+
+.extra-small {
+  font-size: 10px;
+}
