@@ -1,12 +1,8 @@
-//Mixins
-@function rem($pixels, $context: 16) {
-  @return #{$pixels/$context}rem;
-}
-
 @mixin create-button($bg, $sz-ud, $sz-lr, $color) {
   background: $bg;
-  padding: #{$sz-ud} #{$sz-lr};
+  padding: #{$sz-ud}px #{$sz-lr}px;
 
+  display: inline-block;
   &:hover {
     @if $color == 'orange' {
       background-color: $orange-dim;
@@ -42,25 +38,25 @@
 .btn-primary {
   background-color: $primary;
   &.small {
-    @include create-button($primary, rem(8), rem(24), 'orange');
+    @include create-button($primary, 8, 24, 'orange');
   }
   &.regular {
-    @include create-button($primary, rem(12), rem(36), 'orange');
+    @include create-button($primary, 12, 36, 'orange');
   }
   &.large {
-    @include create-button($primary, rem(16), rem(42), 'orange');
+    @include create-button($primary, 16, 42, 'orange');
   }
 }
 
 .btn-secondary {
   background-color: $secondary;
   &.small {
-    @include create-button($secondary, rem(8), rem(24), 'blue');
+    @include create-button($secondary, 8, 24, 'blue');
   }
   &.regular {
-    @include create-button($secondary, rem(12), rem(36), 'blue');
+    @include create-button($secondary, 12, 36, 'blue');
   }
   &.large {
-    @include create-button($secondary, rem(16), rem(42), 'blue');
+    @include create-button($secondary, 16, 42, 'blue');
   }
 }
