@@ -2,22 +2,22 @@
   <div>
     <h1>Login Page</h1>
     <form name="form" @submit.prevent="checkForm">
-      <div>
+      <div id="username">
         <label for="email">Colonist ID</label>
         <input type="text" v-model="user.username" />
-        <div v-if="errors.hasOwnProperty('username')">{{ errors.username }}</div>
+        <div class="error" v-if="errors.hasOwnProperty('username')">{{ errors.username }}</div>
       </div>
       <br />
-      <div>
+      <div id="password">
         <label for="password">Password</label>
         <input type="password" v-model="user.password" />
-        <div v-if="errors.hasOwnProperty('password')">{{ errors.password }}</div>
+        <div class="error" v-if="errors.hasOwnProperty('password')">{{ errors.password }}</div>
       </div>
-      <div>
+      <div id="remember">
         <input @click="remember = !remember" type="checkbox" />
         <label for="rememberMe">Remember Me</label>
       </div>
-      <div v-if="message">{{ message }}</div>
+      <div class="error" v-if="message">{{ message }}</div>
       <button type="submit">Sign In</button>
     </form>
   </div>
@@ -71,6 +71,7 @@ export default {
             this.$router.push('/');
           },
           error => {
+            this.loading = false;
             this.message =
               (error.response && error.response.data) || error.message || error.toString();
           }
