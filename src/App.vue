@@ -8,8 +8,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-button {
-  margin: 3em;
-}
-</style>
+<style></style>
