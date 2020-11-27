@@ -1,8 +1,5 @@
 <template>
-  <div id="app">
-    <h1>Hello</h1>
-    <button class="btn regular btn-secondary">Primary Button</button>
-  </div>
+  <div id="app"><h1>Hello</h1></div>
 </template>
 
 <script>
