@@ -1,0 +1,59 @@
+// Colors
+$primary: #b35139;
+$secondary: #0f1a3a;
+
+// All colors
+$orange-dark: #b35139;
+$orange-dim: #bb624d;
+$orange-medium: #ca8574;
+$orange-light: #d9a89c;
+$orange-tint: #f0dcd7;
+
+$blue-dark: #0f1a3a;
+$blue-dim: #172858;
+$blue-medium: #677bb3;
+$blue-light: #93a1c9;
+$blue-tint: #d6dbeb;
+
+$yellow-dark: #cba646;
+$yellow-dim: #e5ba4f;
+$yellow-medium: #fecf58;
+$yellow-light: #fedd8a;
+$yellow-tint: #ffecbc;
+
+$green-dark: #005b41;
+$green-dim: #007453;
+$green-medium: #00a676;
+$green-light: #4dc19f;
+$green-tint: #bfe9dd;
+
+$red-dark: #97141f;
+$red-dim: #ac1724;
+$red-medium: #db3442;
+$red-light: #e77781;
+$red-tint: #f3bbc0;
+
+$gray-dark: #525252;
+$gray-dim: #a8a8a8;
+$gray-medium: #c7c7c7;
+$gray-light: #d8d8d8;
+$gray-tint: #efefef;
+
+$white: #ffffff;
+$black: #000000;
+
+// font family
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+$font-family: 'Ubuntu', sans-serif;
+
+//font size
+$base-font-size: 1rem;
+
+//font weights
+$bold: 500;
+$light: 400;
+
+//breakpoints
+$small-breakpoint: 360px;
+$medium-breakpoint: 768px;
+$large-breakpoint: 1200px;
