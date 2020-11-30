@@ -1,0 +1,76 @@
+#login {
+  display: flex;
+}
+.hero {
+  float: left;
+}
+.logo {
+  display: block;
+  margin: auto;
+}
+.heading {
+  margin-bottom: 0 !important;
+  margin-top: 127px;
+  text-align: center;
+}
+.content {
+  width: 480px;
+  margin: auto;
+}
+.errors {
+  color: $red-medium;
+  position: fixed;
+}
+
+.checkbox {
+  margin-top: 47px;
+  display: flex;
+  max-width: 200px;
+  color: $secondary;
+}
+
+.checkbox__control {
+  display: inline-grid;
+  background-color: $white;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.2em;
+  border: 0.09rem solid;
+  // center it
+  margin-top: 0.2rem;
+
+  svg {
+    transition: transform 0.1s ease-in 25ms;
+    transform: scale(0);
+    transform-origin: bottom left;
+    margin: auto;
+  }
+}
+
+.checkbox__input {
+  display: grid;
+  grid-template-areas: 'checkbox';
+
+  > * {
+    grid-area: checkbox;
+  }
+
+  input {
+    opacity: 0;
+    width: 1em;
+    height: 1em;
+
+    &:checked + .checkbox__control svg {
+      transform: scale(1);
+    }
+    &:checked + .checkbox__control {
+      background-color: $secondary;
+    }
+  }
+}
+.button {
+  display: block;
+  margin-top: 53px;
+  margin-left: auto;
+  margin-right: auto;
+}

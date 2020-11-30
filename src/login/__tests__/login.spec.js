@@ -1,6 +1,6 @@
 import {shallowMount} from '@vue/test-utils';
 import flushPromises from 'flush-promises';
-import Login from '../src/login/Login.vue';
+import Login from '../Login.vue';
 // import authService from '../src/shared/services/auth.service';
 
 // jest.mock('../src/shared/services/auth.service');

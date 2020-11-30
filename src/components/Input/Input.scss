@@ -1,0 +1,59 @@
+.form-group {
+  position: relative;
+}
+// text and password input
+.text-input {
+  background: #ffffff;
+
+  /* Gray/ dim */
+  border: 1px solid $gray-dim;
+  box-sizing: border-box;
+  height: 56px;
+  width: 480px;
+  padding-left: 1.5em;
+  border-radius: 20px;
+  color: $secondary;
+  // font-size: $base-font-size;
+  font-size: 1rem;
+  margin-top: 55px;
+
+  &:focus {
+    border: 1px solid $secondary;
+    outline: none;
+    & + label {
+      color: $secondary !important;
+    }
+  }
+}
+// text and password label
+.text-label {
+  color: $gray-dim;
+  position: absolute;
+  z-index: 1;
+  left: 17px;
+  top: 45px;
+  padding: 0 8px;
+  background-color: white;
+  font-size: 0.8rem;
+}
+
+.input-errors {
+  border: 1px solid $red-medium;
+}
+
+.label-errors {
+  color: $red-medium;
+}
+
+//checkbox input
+[type='checkbox']:not:checked,
+[type='checkbox']:checked {
+  border: 2px solid black;
+}
+
+.icon {
+  position: absolute;
+  // input width - (icon width + distance from edge)
+  left: #{480- (24+25)}px;
+  bottom: 10px;
+}
