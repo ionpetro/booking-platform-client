@@ -1,7 +1,8 @@
 <template>
   <div id="login">
-    <div>
+    <div class="hero-container">
       <img class="hero" src="@/assets/images/hero.png" alt="hero" />
+      <img class="hero-big" src="@/assets/images/hero-big.png" alt="hero-big" />
     </div>
     <div class="content">
       <img class="logo" src="@/assets/images/blue.png" alt="logo" />
@@ -18,9 +19,8 @@
             v-model="user.username"
             @focused="deleteErrors"
           ></v-input>
-          <div class="errors" v-show="errors.hasOwnProperty('username')">{{ errors.username }}</div>
+          <div class="errors" v-if="errors.hasOwnProperty('username')">{{ errors.username }}</div>
         </div>
-        <br />
         <div id="password">
           <v-input
             :name="'password'"
@@ -31,7 +31,7 @@
             v-model="user.password"
             @focused="deleteErrors"
           ></v-input>
-          <div class="errors" v-show="errors.hasOwnProperty('password')">{{ errors.password }}</div>
+          <div class="errors" v-if="errors.hasOwnProperty('password')">{{ errors.password }}</div>
         </div>
         <div id="remember">
           <label @click="remember = !remember" class="checkbox">

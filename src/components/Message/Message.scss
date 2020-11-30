@@ -25,15 +25,18 @@
   padding-left: 15px;
 }
 
-@media only screen and (max-width: 600px) {
+// mobile
+@media only screen and (max-width: $small-breakpoint) {
   #message {
-    width: 360px;
+    width: 100%;
     height: 35px;
     font-size: 14px;
   }
-  #text,
+  // vertical center
+  #text {
+    margin-top: -5px;
+  }
   #icon {
-    // vertical center
-    margin-top: -7px;
+    margin-top: -6px;
   }
 }

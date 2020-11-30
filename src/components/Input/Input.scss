@@ -57,3 +57,18 @@
   left: #{480- (24+25)}px;
   bottom: 10px;
 }
+
+// mobile
+@media only screen and (max-width: $small-breakpoint) {
+  .text-input {
+    width: 100%;
+    max-height: 44px;
+    border-radius: 15px;
+  }
+
+  .icon {
+    right: 20px;
+    left: auto;
+    bottom: 5px;
+  }
+}

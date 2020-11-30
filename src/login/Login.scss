@@ -3,10 +3,16 @@
 }
 .hero {
   float: left;
+  height: 90vh;
+  max-height: 1200px;
+}
+.hero-big {
+  display: none;
+  width: auto;
 }
 .logo {
   display: block;
-  margin: auto;
+  margin: 81px auto 0 auto;
 }
 .heading {
   margin-bottom: 0 !important;
@@ -73,4 +79,70 @@
   margin-top: 53px;
   margin-left: auto;
   margin-right: auto;
+}
+
+// tablet
+@media only screen and (max-width: $medium-breakpoint) {
+  .hero {
+    display: none;
+  }
+  .content {
+    width: 480px;
+    margin: auto;
+  }
+}
+
+// mobile
+@media only screen and (max-width: $small-breakpoint) {
+  .content {
+    width: 100%;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .heading {
+    margin-top: 48px;
+  }
+}
+// portrait screen
+@media only screen and (min-width: $medium-breakpoint) and (min-height: 1300px) {
+  .hero-big {
+    display: none;
+  }
+  .hero {
+    display: none;
+  }
+  .content {
+    position: relative;
+    top: 30vh;
+  }
+}
+
+// big screen
+@media only screen and (min-width: 2000px) and (min-height: 1300px) {
+  .hero {
+    display: none;
+  }
+  .content {
+    position: relative;
+    top: -100px;
+  }
+  .hero-big {
+    display: block;
+    // height: 100vh;
+  }
+}
+
+// portrait on big screen
+@media only screen and (min-width: 2000px) and (min-height: 1800px) {
+  .hero {
+    display: none;
+  }
+  .content {
+    position: relative;
+    top: 30vh;
+  }
+  .hero-big {
+    display: none;
+    // height: 100vh;
+  }
 }
