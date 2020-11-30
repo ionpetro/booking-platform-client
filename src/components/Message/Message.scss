@@ -1,0 +1,39 @@
+#message {
+  display: flex;
+  flex-direction: row;
+  padding: 12px 14px;
+  width: 480px;
+  height: 48px;
+  border-radius: 20px;
+  margin-top: 30px;
+
+  &.error {
+    background-color: $red-tint;
+    color: $red-dark;
+  }
+  &.warning {
+    background-color: $yellow-tint;
+    color: $yellow-dark;
+  }
+  &.success {
+    background-color: $green-tint;
+    color: $green-dark;
+  }
+}
+
+#text {
+  padding-left: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  #message {
+    width: 360px;
+    height: 35px;
+    font-size: 14px;
+  }
+  #text,
+  #icon {
+    // vertical center
+    margin-top: -7px;
+  }
+}

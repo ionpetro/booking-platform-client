@@ -6,8 +6,7 @@
     <div class="content">
       <img class="logo" src="@/assets/images/blue.png" alt="logo" />
       <h1 class="heading">Welcome Back</h1>
-      <div class="error" v-if="message">{{ message }}</div>
-
+      <v-message :type="'error'" v-if="message">{{ message }}</v-message>
       <form name="form" @submit.prevent="checkForm">
         <div id="username">
           <v-input

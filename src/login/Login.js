@@ -1,5 +1,6 @@
 import Button from '../components/Button/Button.vue';
 import Input from '../components/Input/Input.vue';
+import Message from '../components/Message/Message.vue';
 import User from '../models/user';
 import AuthService from '../shared/services/auth.service';
 
@@ -9,7 +10,8 @@ export default {
   name: 'Login',
   components: {
     'v-button': Button,
-    'v-input': Input
+    'v-input': Input,
+    'v-message': Message
   },
   data() {
     return {
