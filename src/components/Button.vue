@@ -1,0 +1,100 @@
+<template>
+  <button class="btn" :class="[variant, size]">
+    <slot>Button</slot>
+  </button>
+</template>
+
+<script>
+const sizes = {
+  small: 'small',
+  regular: 'regular',
+  large: 'large'
+};
+
+const variants = {
+  light: 'light',
+  dark: 'dark',
+  success: 'success',
+  danger: 'danger',
+  primary: 'primary',
+  secondary: 'secondary'
+};
+export default {
+  props: {
+    size: {
+      type: String,
+      default: sizes.regular,
+      validator: value => Object.values(sizes).includes(value)
+    },
+    variant: {
+      type: [String, null],
+      default: variants.primary,
+      validator: value => Object.values(variants).includes(value)
+    }
+  }
+};
+</script>
+
+<style lang="scss">
+@mixin create-button($bg, $sz-ud, $sz-lr, $color) {
+  background: $bg;
+  padding: #{$sz-ud} #{$sz-lr};
+
+  &:hover {
+    @if $color == 'orange' {
+      background-color: $orange-dim;
+    } @else {
+      background-color: $blue-dim;
+    }
+  }
+  &:disabled {
+    @if $color == 'orange' {
+      background-color: $orange-light;
+    } @else {
+      background-color: $blue-light;
+    }
+  }
+  &:focus-visible {
+    @if $color == 'orange' {
+      box-shadow: 0 0 0 2px $orange-light;
+    } @else {
+      box-shadow: 0 0 0 2px $blue-light;
+    }
+  }
+}
+
+.btn {
+  color: white;
+  outline: none;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: $base-font-size;
+  border: none;
+}
+
+.primary {
+  background-color: $primary;
+  &.small {
+    @include create-button($primary, rem(8), rem(24), 'orange');
+  }
+  &.regular {
+    @include create-button($primary, rem(12), rem(36), 'orange');
+  }
+  &.large {
+    @include create-button($primary, rem(16), rem(42), 'orange');
+  }
+}
+
+.secondary {
+  background-color: $secondary;
+  &.small {
+    @include create-button($secondary, rem(8), rem(24), 'blue');
+  }
+  &.regular {
+    @include create-button($secondary, rem(12), rem(36), 'blue');
+  }
+  &.large {
+    @include create-button($secondary, rem(16), rem(42), 'blue');
+  }
+}
+</style>
