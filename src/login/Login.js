@@ -15,12 +15,16 @@ export default {
   },
   data() {
     return {
+      show: false,
       loading: false,
       user: new User('', ''),
       remember: false,
       errors: {},
       message: ''
     };
+  },
+  mounted() {
+    this.show = true;
   },
   methods: {
     checkForm() {
