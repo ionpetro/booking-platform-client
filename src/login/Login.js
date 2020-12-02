@@ -78,7 +78,7 @@ export default {
     // Redirect user to home page if already authenticated
     let user = localStorage.getItem('user') || sessionStorage.getItem('user');
     user = JSON.parse(user);
-    if (user && user.jwt) {
+    if (user) {
       this.$router.push('/');
     }
   }

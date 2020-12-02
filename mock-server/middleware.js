@@ -6,7 +6,8 @@ module.exports = (req, res, next) => {
       role: 'user',
       firstName: `Mr ${req.body.username}`,
       lastName: `Mr ${req.body.username}`,
-      jwt: 'My secure JWT token'
+      jwtAuth: 'My secure JWT token',
+      jwtRefresh: 'My secure JWT refresh token'
     });
   } else {
     // let db.json handle any other requests
