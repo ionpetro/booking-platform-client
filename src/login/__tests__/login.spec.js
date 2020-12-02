@@ -1,25 +1,28 @@
-import {shallowMount} from '@vue/test-utils';
+import {mount} from '@vue/test-utils';
 import flushPromises from 'flush-promises';
+import axios from 'axios';
 import Login from '../Login.vue';
-// import authService from '../src/shared/services/auth.service';
+import Button from '../../components/Button/Button.vue';
+import Message from '../../components/Message/Message.vue';
+import authService from '../../shared/services/auth.service';
 
-// jest.mock('../src/shared/services/auth.service');
+jest.mock('axios');
 
 describe('Login', () => {
   let wrapper;
   const $router = {push: jest.fn()};
 
   beforeEach(() => {
-    wrapper = shallowMount(Login, {
+    wrapper = mount(Login, {
       mocks: {$router}
     });
   });
 
-  const findBtnSignIn = () => wrapper.find('button');
-  const findInputUsername = () => wrapper.find('#username > input');
-  const findInputPassword = () => wrapper.find('#password > input');
-  const findMsgError = () => wrapper.find('.error');
   const findForm = () => wrapper.find('form');
+  const findMsgError = () => wrapper.find('.errors');
+  const findInputUsername = () => wrapper.find('.username input');
+  const findInputPassword = () => wrapper.find('.password input');
+  const findBtnSignIn = () => wrapper.findComponent(Button);
 
   it('has data', () => {
     expect(typeof Login.data).toBe('function');
@@ -30,12 +33,12 @@ describe('Login', () => {
       const findTitle = () => wrapper.find('h1');
 
       expect(findTitle().exists()).toBe(true);
-      expect(findTitle().text()).toBe('Login Page');
+      expect(findTitle().text()).toBe('Welcome Back');
       expect(findInputUsername().exists()).toBe(true);
       expect(findForm().exists()).toBe(true);
       expect(findInputPassword().exists()).toBe(true);
       expect(findBtnSignIn().exists()).toBe(true);
-      expect(findBtnSignIn().text()).toBe('Sign In');
+      expect(findBtnSignIn().text()).toBe('Login');
       expect(findMsgError().exists()).toBe(false);
     });
   });
@@ -52,40 +55,52 @@ describe('Login', () => {
       expect(findMsgError().exists()).toBe(true);
       expect(findMsgError().text()).toBe(message);
     };
-
     it('shows error when username or password is empty', async () => {
       await fillLoginFieldAndSubmit('', 'test');
-      assertErrorMessage('Username Required');
+      assertErrorMessage('* Please, fill your username.');
 
       await fillLoginFieldAndSubmit('test@1234.co', '');
-      assertErrorMessage('Password Required');
+      assertErrorMessage('* Please, fill your password.');
 
       await fillLoginFieldAndSubmit('test', 'test');
-      assertErrorMessage('Valid Username Required');
+      assertErrorMessage('* Please, correct your username');
     });
 
-    it('hits login API and redirects to homepage', async () => {
-      // TODO: Test this feature
-      // authService.login.mockResolvedValue();
-      // await fillLoginFieldAndSubmit('test@1234.co', 'test');
-      // expect(authService.login).toHaveBeenCalled();
-      // expect($router.push).toBeCalledWith('home');
-    });
-
-    it('shows error when API hit throws error', async () => {
-      // TODO: Test this feature
-      //   authService.login.mockRejectedValue();
-      //   await fillLoginFieldAndSubmit('test@1234.co', 'test');
-      //   expect(service.login).toBeCalled();
-      //   assertErrorMessage('Login failed');
-    });
-
-    it('handlesLogin when both username and password are valid', async () => {
-      await wrapper.find('#username > input').setValue('joe@1234.co');
-      await wrapper.find('#password > input').setValue('bestPassw0rd');
-
+    it('hits login API with correct credentials and redirects to home page', async () => {
+      const mockedUser = {
+        username: 'test@1234.co',
+        password: 'test'
+      };
+      // const bodyResponse = {
+      //   username: 'test@1234.co',
+      //   role: 'user',
+      //   firstName: 'Mr test@1234.co',
+      //   lastName: 'Mr test@1234.co',
+      //   jwtAuth: 'My secure JWT token',
+      //   jwtRefresh: 'My secure JWT refresh token'
+      // };
+      const resp = {data: mockedUser};
+      axios.post.mockResolvedValue(resp);
+      await fillLoginFieldAndSubmit('test@1234.co', 'test');
       await wrapper.find('form').trigger('submit.prevent');
       expect(wrapper.vm.loading).toBe(true);
+      authService.prototype
+        .login('test@1234.co', 'test', true)
+        .then(data => expect(data).toEqual(mockedUser));
+      expect($router.push).toHaveBeenCalledWith('/');
+      // https://jestjs.io/docs/en/mock-functions#mocking-modules
+    });
+
+    it('shows error when API throws error', async () => {
+      const resp = new Error('Network Error');
+      axios.post.mockRejectedValue(resp);
+      await fillLoginFieldAndSubmit('invalid@1234.co', 'invalid');
+      await wrapper.find('form').trigger('submit.prevent');
+      authService.prototype
+        .login('invalid@1234.co', 'invalid')
+        .then(data => expect(data).toEqual(resp));
+      expect(wrapper.vm.loading).toBe(false);
+      expect(wrapper.findComponent(Message).text()).toEqual('Network Error');
     });
   });
 });

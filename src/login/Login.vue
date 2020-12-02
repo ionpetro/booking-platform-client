@@ -14,6 +14,7 @@
         <form name="form" @submit.prevent="checkForm">
           <div id="username">
             <v-input
+              class="username"
               :name="'username'"
               :labelName="'Username'"
               :type="'text'"
@@ -26,6 +27,7 @@
           </div>
           <div id="password">
             <v-input
+              class="password"
               :name="'password'"
               :labelName="'Password'"
               :placeholder="'Fill your password here..'"
