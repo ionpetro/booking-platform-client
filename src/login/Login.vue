@@ -63,7 +63,17 @@
               <span class="checkbox__text">Remember me</span>
             </label>
           </div>
-          <v-button class="button" :size="'regular'" :variant="'primary'">Login</v-button>
+          <v-button class="btn button" :size="'regular'" :variant="'primary'"
+            ><span v-if="!loading">Login</span>
+            <span>
+              <beat-loader
+                v-if="loading"
+                :color="'white'"
+                :size="10"
+                :sizeUnit="'px'"
+              ></beat-loader>
+            </span>
+          </v-button>
         </form>
       </div>
     </div>

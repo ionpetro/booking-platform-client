@@ -1,3 +1,4 @@
+import {BeatLoader} from '@saeris/vue-spinners';
 import Button from '../components/Button/Button.vue';
 import Input from '../components/Input/Input.vue';
 import Message from '../components/Message/Message.vue';
@@ -9,6 +10,7 @@ const authService = new AuthService();
 export default {
   name: 'Login',
   components: {
+    BeatLoader,
     'v-button': Button,
     'v-input': Input,
     'v-message': Message
