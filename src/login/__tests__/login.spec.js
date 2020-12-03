@@ -62,7 +62,7 @@ describe('Login', () => {
       await wrapper.find('form').trigger('submit.prevent');
       expect(wrapper.vm.loading).toBe(true);
       await flushPromises();
-      expect($router.push).toHaveBeenCalledWith('/');
+      expect($router.push).toHaveBeenCalledWith('/units');
     });
 
     it('shows error when API throws error', async () => {

@@ -10,8 +10,8 @@ import interceptorsSetup from './shared/helpers/interceptors';
 interceptorsSetup();
 
 Vue.use(VueCookies);
-Vue.config.productionTip = false;
 Vue.use(VueSpinners);
+Vue.config.productionTip = false;
 
 // set secure, only https works
 Vue.$cookies.config('', '', '', true);
