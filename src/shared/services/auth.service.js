@@ -6,25 +6,24 @@ const BASE_URL = process.env.VUE_APP_URL;
 export default class AuthService {
   login(user, remember) {
     return axios
-      .post(`${BASE_URL}/users`, {
+      .post(`${BASE_URL}/login`, {
         username: user.username,
         password: user.password
       })
       .then(response => {
-        if (response.data.jwtAuth) {
+        if (response.data.accessToken) {
           if (remember) {
-            // document.cookie = `jwtAuth = ' ${response.data.jwtAuth} ;SameSite=None; secure=true`;
-            Vue.$cookies.set('jwtAuth', response.data.jwtAuth);
-            Vue.$cookies.set('jwtRefresh', response.data.jwtRefresh);
-            delete response.data.jwtAuth;
-            delete response.data.jwtRefresh;
+            Vue.$cookies.set('accessToken', response.data.accessToken);
+            Vue.$cookies.set('refreshToken', response.data.refreshToken);
+            delete response.data.accessToken;
+            delete response.data.refreshToken;
             localStorage.setItem('user', JSON.stringify(response.data));
           } else {
-            // document.cookie = `jwtAuth = ' ${response.data.jwtAuth} ;SameSite=None; secure=true`;
-            Vue.$cookies.set('jwtAuth', response.data.jwtAuth);
-            Vue.$cookies.set('jwtRefresh', response.data.jwtRefresh);
-            delete response.data.jwtAuth;
-            delete response.data.jwtRefresh;
+            // document.cookie = `accessToken = ' ${response.data.accessToken} ;SameSite=None; secure=true`;
+            Vue.$cookies.set('accessToken', response.data.accessToken);
+            Vue.$cookies.set('refreshToken', response.data.refreshToken);
+            delete response.data.accessToken;
+            delete response.data.refreshToken;
             sessionStorage.setItem('user', JSON.stringify(response.data));
           }
         }
@@ -33,8 +32,8 @@ export default class AuthService {
   }
 
   logout() {
-    Vue.$cookies.remove('jwtAuth');
-    Vue.$cookies.remove('jwtRefresh');
+    Vue.$cookies.remove('accessToken');
+    Vue.$cookies.remove('refreshToken');
 
     if (sessionStorage.getItem('user')) {
       sessionStorage.removeItem('user');

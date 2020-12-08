@@ -61,7 +61,7 @@ export default {
           error => {
             this.loading = false;
             this.message =
-              (error.response && error.response.data) || error.message || error.toString();
+              (error.response && error.response.data.message) || error.message || error.toString();
           }
         );
       }
