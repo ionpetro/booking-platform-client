@@ -72,6 +72,9 @@
     &:checked + .checkbox__control {
       background-color: $secondary;
     }
+    &:focus-visible + .checkbox__control {
+      box-shadow: 0 0 0 2px $orange-light;
+    }
   }
 }
 .button {

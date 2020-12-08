@@ -45,12 +45,6 @@
   color: $red-medium;
 }
 
-//checkbox input
-[type='checkbox']:not:checked,
-[type='checkbox']:checked {
-  border: 2px solid black;
-}
-
 .icon {
   position: absolute;
   // input width - (icon width + distance from edge)
