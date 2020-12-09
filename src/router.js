@@ -35,4 +35,4 @@ router.beforeEach((to, from, next) => {
   }
 });
 
-export {router as default};
+export default router;
