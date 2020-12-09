@@ -1,20 +1,19 @@
 <template>
-  <div class="form-group">
+  <div class="input">
     <input
       :value="value"
       :type="customType"
-      class="text-input"
       :placeholder="placeholder"
-      :class="errors ? 'input-errors' : ''"
+      :class="['input__text', {input__errors: errors}]"
       @input="$emit('input', $event.target.value)"
       @focus="$emit('focused', labelName)"
     />
-    <label class="text-label" :class="errors ? 'label-errors' : ''" for="name">{{
+    <label class="label__text" :class="['label__text', {label__errors: errors}]" for="name">{{
       labelName
     }}</label>
-    <div class="icon" @click="showPassword" v-if="labelName === 'Password'">
-      <img v-show="showEye" src="@/assets/icons/Eye.svg" alt="" />
-      <img v-show="!showEye" src="@/assets/icons/Eye-Off.svg" alt="" />
+    <div class="input__icon" @click="showPassword" v-if="labelName === 'Password'">
+      <img v-show="showEye" src="@/assets/icons/Eye.svg" alt="show password" />
+      <img v-show="!showEye" src="@/assets/icons/Eye-Off.svg" alt="hide password" />
     </div>
   </div>
 </template>

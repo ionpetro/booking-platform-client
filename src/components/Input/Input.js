@@ -1,3 +1,8 @@
+const types = {
+  text: 'text',
+  password: 'password'
+};
+
 export default {
   data() {
     return {
@@ -6,44 +11,29 @@ export default {
     };
   },
   props: {
-    value: {
-      required: true,
-      type: String
-    },
-    name: {
-      required: true,
-      type: String
-    },
-    labelName: {
-      required: true,
-      type: String
-    },
+    value: String,
+    name: String,
+    labelName: String,
+    placeholder: String,
     errors: {
       required: false,
       type: [String || null]
     },
-    placeholder: {
-      required: true,
-      type: String
-    },
     type: {
       required: true,
-      default: 'text',
-      type: String
+      default: types.text,
+      type: String,
+      validator: value => Object.values(types).includes(value)
     }
   },
   methods: {
     // toggle password input
     showPassword() {
-      if (this.name === 'password') {
-        if (this.customType === 'password') {
-          this.customType = 'text';
-          this.showEye = !this.showEye;
-        } else {
-          this.customType = 'password';
-          this.showEye = !this.showEye;
-        }
+      if (this.name !== types.password) {
+        return;
       }
+      this.customType = this.customType === types.password ? types.text : types.password;
+      this.showEye = !this.showEye;
     }
   }
 };

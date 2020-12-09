@@ -1,8 +1,8 @@
-.form-group {
+.input {
   position: relative;
 }
 // text and password input
-.text-input {
+.input__text {
   background: #ffffff;
 
   /* Gray/ dim */
@@ -10,10 +10,9 @@
   box-sizing: border-box;
   height: 56px;
   width: 480px;
-  padding-left: 1.5em;
+  padding-left: 24px;
   border-radius: 20px;
   color: $secondary;
-  // font-size: $base-font-size;
   font-size: 1rem;
   margin-top: 55px;
 
@@ -24,9 +23,16 @@
       color: $secondary !important;
     }
   }
+
+  // mobile
+  @media only screen and (max-width: $small-breakpoint) {
+    width: 100%;
+    max-height: 44px;
+    border-radius: 15px;
+  }
 }
 // text and password label
-.text-label {
+.label__text {
   color: $gray-dim;
   position: absolute;
   z-index: 1;
@@ -37,30 +43,22 @@
   font-size: 0.8rem;
 }
 
-.input-errors {
+.input__errors {
   border: 1px solid $red-medium;
 }
 
-.label-errors {
+.label__errors {
   color: $red-medium;
 }
 
-.icon {
+.input__icon {
   position: absolute;
   // input width - (icon width + distance from edge)
   left: #{480- (24+25)}px;
   bottom: 10px;
-}
 
-// mobile
-@media only screen and (max-width: $small-breakpoint) {
-  .text-input {
-    width: 100%;
-    max-height: 44px;
-    border-radius: 15px;
-  }
-
-  .icon {
+  // mobile
+  @media only screen and (max-width: $small-breakpoint) {
     right: 20px;
     left: auto;
     bottom: 5px;
