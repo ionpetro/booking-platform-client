@@ -1,6 +1,5 @@
-#message {
+.message {
   display: flex;
-  flex-direction: row;
   padding: 12px 14px;
   width: 480px;
   height: 48px;
@@ -19,24 +18,25 @@
     background-color: $green-tint;
     color: $green-dark;
   }
-}
-
-#text {
-  padding-left: 15px;
-}
-
-// mobile
-@media only screen and (max-width: $small-breakpoint) {
-  #message {
+  // mobile
+  @media only screen and (max-width: $small-breakpoint) {
     width: 100%;
     height: 35px;
     font-size: 14px;
   }
-  // vertical center
-  #text {
+}
+
+.text {
+  padding-left: 15px;
+  // mobile
+  @media only screen and (max-width: $small-breakpoint) {
     margin-top: -5px;
   }
-  #icon {
+}
+
+.icon {
+  // mobile
+  @media only screen and (max-width: $small-breakpoint) {
     margin-top: -6px;
   }
 }
