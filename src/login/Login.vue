@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <div id="login" v-if="show">
+    <div class="login" v-if="show">
       <div class="hero-container">
         <img class="hero" src="@/assets/images/hero.png" alt="hero" />
         <img class="hero-big" src="@/assets/images/hero-big.png" alt="hero-big" />
@@ -8,38 +8,38 @@
       <div class="content">
         <img class="logo" src="@/assets/images/blue.png" alt="logo" />
         <h1 class="heading">Welcome Back</h1>
-        <!-- <transition name="fade"> -->
-        <v-message :type="'error'" v-if="message">{{ message }}</v-message>
-        <!-- </transition> -->
-        <form name="form" @submit.prevent="checkForm">
+        <transition name="fade">
+          <v-message type="error" v-if="message">{{ message }}</v-message>
+        </transition>
+        <form name="form" @submit.prevent="handleLogin">
           <div id="username">
             <v-input
               class="username"
-              :name="'username'"
-              :labelName="'Username'"
-              :type="'text'"
+              name="username"
+              labelName="Username"
+              type="text"
               :errors="errors.username"
-              :placeholder="'ex. joe@2020.co'"
+              placeholder="ex. joe@2020.co"
               v-model="user.username"
-              @focused="deleteErrors"
+              @focused="deleteError('username')"
             ></v-input>
-            <div class="errors" v-if="errors.hasOwnProperty('username')">{{ errors.username }}</div>
+            <div class="errors" v-if="errors.username">{{ errors.username }}</div>
           </div>
           <div id="password">
             <v-input
               class="password"
-              :name="'password'"
-              :labelName="'Password'"
-              :placeholder="'Fill your password here..'"
-              :type="'password'"
+              name="password"
+              labelName="Password"
+              placeholder="Fill your password here.."
+              type="password"
               :errors="errors.password"
               v-model="user.password"
-              @focused="deleteErrors"
+              @focused="deleteError('password')"
             ></v-input>
-            <div class="errors" v-if="errors.hasOwnProperty('password')">{{ errors.password }}</div>
+            <div class="errors" v-if="errors.password">{{ errors.password }}</div>
           </div>
           <div id="remember">
-            <label @click="remember = !remember" class="checkbox">
+            <label @click="clickCheckbox" class="checkbox">
               <span class="checkbox__input">
                 <input type="checkbox" name="checkbox" />
                 <span class="checkbox__control">
@@ -63,15 +63,10 @@
               <span class="checkbox__text">Remember me</span>
             </label>
           </div>
-          <v-button class="btn button" :size="'regular'" :variant="'primary'"
+          <v-button class="btn button--margin" variant="primary"
             ><span v-if="!loading">Login</span>
             <span>
-              <beat-loader
-                v-if="loading"
-                :color="'white'"
-                :size="10"
-                :sizeUnit="'px'"
-              ></beat-loader>
+              <beat-loader v-if="loading" color="white" :size="10" sizeUnit="px"></beat-loader>
             </span>
           </v-button>
         </form>

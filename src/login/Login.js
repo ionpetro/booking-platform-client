@@ -41,46 +41,49 @@ export default {
       if (!this.user.password) {
         this.errors.password = '* Please, fill your password.';
       }
-
-      // if there are no validation errors, proceed with login
-      if (!Object.keys(this.errors).length) {
-        this.handleLogin();
-      }
     },
     validUsername(username) {
       const re = /^\w{2,8}@(\d{4}\.)[\w]{2}$/;
       return re.test(username);
     },
     handleLogin() {
+      // validate form and check for errors
+      this.checkForm();
+      // if you find errors, interrupt login
+      if (Object.keys(this.errors).length) {
+        this.loading = false;
+        return;
+      }
       this.loading = true;
       if (this.user.username && this.user.password) {
-        authService.login(this.user, this.remember).then(
-          () => {
+        authService
+          .login(this.user, this.remember)
+          .then(() => {
             this.$router.push('/');
-          },
-          error => {
+          })
+          .catch(error => {
             this.loading = false;
             this.message =
               (error.response && error.response.data.message) || error.message || error.toString();
-          }
-        );
+          });
       }
     },
-    deleteErrors(labelName) {
+    deleteError(name) {
       // when user focuses on the input, the error message is deleted
-      if (labelName === 'Username') {
+      if (name === 'username') {
         this.$delete(this.errors, 'username');
       }
-      if (labelName === 'Password') {
+      if (name === 'password') {
         this.$delete(this.errors, 'password');
       }
+    },
+    clickCheckbox() {
+      this.remember = !this.remember;
     }
   },
   created() {
     // Redirect user to home page if already authenticated
-    let user = localStorage.getItem('user') || sessionStorage.getItem('user');
-    user = JSON.parse(user);
-    if (user) {
+    if (localStorage.getItem('user') || sessionStorage.getItem('user')) {
       this.$router.push('/');
     }
   }

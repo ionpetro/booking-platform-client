@@ -71,14 +71,6 @@ describe('Login', () => {
         username: 'test@1234.co',
         password: 'test'
       };
-      // const bodyResponse = {
-      //   username: 'test@1234.co',
-      //   role: 'user',
-      //   firstName: 'Mr test@1234.co',
-      //   lastName: 'Mr test@1234.co',
-      //   jwtAuth: 'My secure JWT token',
-      //   jwtRefresh: 'My secure JWT refresh token'
-      // };
       const resp = {data: mockedUser};
       axios.post.mockResolvedValue(resp);
       await fillLoginFieldAndSubmit('test@1234.co', 'test');
@@ -88,7 +80,6 @@ describe('Login', () => {
         .login('test@1234.co', 'test', true)
         .then(data => expect(data).toEqual(mockedUser));
       expect($router.push).toHaveBeenCalledWith('/');
-      // https://jestjs.io/docs/en/mock-functions#mocking-modules
     });
 
     it('shows error when API throws error', async () => {

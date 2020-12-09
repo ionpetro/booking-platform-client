@@ -1,14 +1,44 @@
-#login {
+.login {
   display: flex;
 }
 .hero {
   float: left;
   height: 90vh;
   max-height: 1200px;
+
+  // tablet
+  @media only screen and (max-width: $medium-breakpoint) {
+    display: none;
+  }
+  // portrait screen
+  @media only screen and (min-width: $medium-breakpoint) and (min-height: 1300px) {
+    display: none;
+  }
+  // big screen
+  @media only screen and (min-width: 2000px) and (min-height: 1300px) {
+    display: none;
+  }
+  // portrait on big screen
+  @media only screen and (min-width: 2000px) and (min-height: 1800px) {
+    display: none;
+  }
 }
 .hero-big {
   display: none;
   width: auto;
+
+  // portrait screen
+  @media only screen and (min-width: $medium-breakpoint) and (min-height: 1300px) {
+    display: none;
+  }
+  // big screen
+  @media only screen and (min-width: 2000px) and (min-height: 1300px) {
+    display: block;
+  }
+  // portrait on big screen
+  @media only screen and (min-width: 2000px) and (min-height: 1800px) {
+    display: none;
+  }
 }
 .logo {
   display: block;
@@ -18,14 +48,46 @@
   margin-bottom: 0 !important;
   margin-top: 127px;
   text-align: center;
+
+  // mobile
+  @media only screen and (max-width: $small-breakpoint) {
+    margin-top: 48px;
+  }
 }
 .content {
   width: 480px;
   margin: auto;
+
+  // mobile
+  @media only screen and (max-width: $small-breakpoint) {
+    width: 100%;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  // tablet
+  @media only screen and (max-width: $medium-breakpoint) {
+    width: 480px;
+    margin: auto;
+  }
+  // portrait screen
+  @media only screen and (min-width: $medium-breakpoint) and (min-height: 1300px) {
+    position: relative;
+    top: 30vh;
+  }
+  // big screen
+  @media only screen and (min-width: 2000px) and (min-height: 1300px) {
+    position: relative;
+    top: -100px;
+  }
+  // portrait on big screen
+  @media only screen and (min-width: 2000px) and (min-height: 1800px) {
+    position: relative;
+    top: 30vh;
+  }
 }
 .errors {
   color: $red-medium;
-  position: fixed;
+  position: absolute;
 }
 
 .checkbox {
@@ -77,78 +139,13 @@
     }
   }
 }
-.button {
+.button--margin {
   margin-top: 53px;
   margin-left: auto;
   margin-right: auto;
 }
 
-// tablet
-@media only screen and (max-width: $medium-breakpoint) {
-  .hero {
-    display: none;
-  }
-  .content {
-    width: 480px;
-    margin: auto;
-  }
-}
-
-// mobile
-@media only screen and (max-width: $small-breakpoint) {
-  .content {
-    width: 100%;
-    margin-left: 16px;
-    margin-right: 16px;
-  }
-  .heading {
-    margin-top: 48px;
-  }
-}
-// portrait screen
-@media only screen and (min-width: $medium-breakpoint) and (min-height: 1300px) {
-  .hero-big {
-    display: none;
-  }
-  .hero {
-    display: none;
-  }
-  .content {
-    position: relative;
-    top: 30vh;
-  }
-}
-
-// big screen
-@media only screen and (min-width: 2000px) and (min-height: 1300px) {
-  .hero {
-    display: none;
-  }
-  .content {
-    position: relative;
-    top: -100px;
-  }
-  .hero-big {
-    display: block;
-    // height: 100vh;
-  }
-}
-
-// portrait on big screen
-@media only screen and (min-width: 2000px) and (min-height: 1800px) {
-  .hero {
-    display: none;
-  }
-  .content {
-    position: relative;
-    top: 30vh;
-  }
-  .hero-big {
-    display: none;
-    // height: 100vh;
-  }
-}
-
+// transitions
 .fade-enter-active {
   transition: opacity 1s;
 }
