@@ -11,27 +11,37 @@ export default class AuthService {
         password: user.password
       })
       .then(response => {
-        if (response.data.accessToken) {
-          if (remember) {
-            Vue.$cookies.set('accessToken', response.data.accessToken);
-            Vue.$cookies.set('refreshToken', response.data.refreshToken);
-            delete response.data.accessToken;
-            delete response.data.refreshToken;
-            localStorage.setItem('user', JSON.stringify(response.data));
-          } else {
-            // document.cookie = `accessToken = ' ${response.data.accessToken} ;SameSite=None; secure=true`;
-            Vue.$cookies.set('accessToken', response.data.accessToken);
-            Vue.$cookies.set('refreshToken', response.data.refreshToken);
-            delete response.data.accessToken;
-            delete response.data.refreshToken;
-            sessionStorage.setItem('user', JSON.stringify(response.data));
-          }
+        const {accessToken, refreshToken, ...data} = response.data;
+        if (!accessToken) {
+          throw new Error('No access token is found');
         }
-        return response.data;
+        Vue.$cookies.set('accessToken', accessToken);
+        Vue.$cookies.set('refreshToken', refreshToken);
+        delete data.accessToken;
+        delete data.refreshToken;
+        if (remember) {
+          localStorage.setItem('user', JSON.stringify(data));
+        } else {
+          sessionStorage.setItem('user', JSON.stringify(data));
+        }
+        return data;
+      })
+      .catch(err => {
+        if (err.response && err.response.status === 403) {
+          // Request made and server responded
+          throw new Error('Your credentials are invalid');
+        }
+        if (err.request) {
+          // The request was made but no response was received
+          throw new Error('The server is down. Try again in a few minutes');
+        }
+        // Something happened in setting up the request that triggered an err
+        throw new Error('Something went wrong. Try again in a few minutes');
       });
   }
 
   logout() {
+    // remove token related cookies
     Vue.$cookies.remove('accessToken');
     Vue.$cookies.remove('refreshToken');
 

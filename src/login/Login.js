@@ -41,6 +41,8 @@ export default {
       if (!this.user.password) {
         this.errors.password = '* Please, fill your password.';
       }
+      // returns the number of errors found
+      return Object.keys(this.errors).length;
     },
     validUsername(username) {
       const re = /^\w{2,8}@(\d{4}\.)[\w]{2}$/;
@@ -50,23 +52,20 @@ export default {
       // validate form and check for errors
       this.checkForm();
       // if you find errors, interrupt login
-      if (Object.keys(this.errors).length) {
+      if (this.checkForm()) {
         this.loading = false;
         return;
       }
       this.loading = true;
-      if (this.user.username && this.user.password) {
-        authService
-          .login(this.user, this.remember)
-          .then(() => {
-            this.$router.push('/');
-          })
-          .catch(error => {
-            this.loading = false;
-            this.message =
-              (error.response && error.response.data.message) || error.message || error.toString();
-          });
-      }
+      authService
+        .login(this.user, this.remember)
+        .then(() => {
+          this.$router.push('/');
+        })
+        .catch(error => {
+          this.loading = false;
+          this.message = error.message;
+        });
     },
     deleteError(name) {
       // when user focuses on the input, the error message is deleted
