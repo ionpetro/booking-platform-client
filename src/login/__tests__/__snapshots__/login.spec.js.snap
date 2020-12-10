@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login when loaded renders correctly 1`] = `
+<transition-stub
+  name="fade"
+>
+  <div
+    class="login"
+  >
+    <div
+      class="hero-container"
+    >
+      <img
+        alt="hero"
+        class="hero"
+        src="@/assets/images/hero.png"
+      />
+       
+      <img
+        alt="hero-big"
+        class="hero-big"
+        src="@/assets/images/hero-big.png"
+      />
+    </div>
+     
+    <div
+      class="content"
+    >
+      <img
+        alt="logo"
+        class="logo"
+        src="@/assets/images/blue.png"
+      />
+       
+      <h1
+        class="heading"
+      >
+        Welcome Back
+      </h1>
+       
+      <transition-stub
+        name="fade"
+      >
+        <!---->
+      </transition-stub>
+       
+      <form
+        name="form"
+      >
+        <div
+          id="username"
+        >
+          <div
+            class="input username"
+          >
+            <input
+              class="input__text"
+              placeholder="ex. joe@2020.co"
+              type="text"
+            />
+             
+            <label
+              class="label__text label__text"
+              for="name"
+            >
+              Username
+            </label>
+             
+            <!---->
+          </div>
+           
+          <!---->
+        </div>
+         
+        <div
+          id="password"
+        >
+          <div
+            class="input password"
+          >
+            <input
+              class="input__text"
+              placeholder="Fill your password here.."
+              type="password"
+            />
+             
+            <label
+              class="label__text label__text"
+              for="name"
+            >
+              Password
+            </label>
+             
+            <div
+              class="input__icon"
+            >
+              <img
+                alt="show password"
+                src="@/assets/icons/Eye.svg"
+              />
+               
+              <img
+                alt="hide password"
+                src="@/assets/icons/Eye-Off.svg"
+                style="display: none;"
+              />
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+         
+        <div
+          id="remember"
+        >
+          <label
+            class="checkbox"
+          >
+            <span
+              class="checkbox__input"
+            >
+              <input
+                name="checkbox"
+                type="checkbox"
+              />
+               
+              <span
+                class="checkbox__control"
+              >
+                <svg
+                  fill="none"
+                  height="9"
+                  viewBox="0 0 9 9"
+                  width="9"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.16583 0.833374L3.24746 7.85928C3.11582 8.04845 2.90126 8.1628 2.67083 8.16661C2.44039 8.17042 2.22218 8.06322 2.08435 7.87851L0.833252 6.21059"
+                    stroke="white"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                  />
+                </svg>
+              </span>
+            </span>
+             
+            <span
+              class="checkbox__text"
+            >
+              Remember me
+            </span>
+          </label>
+        </div>
+         
+        <button
+          class="btn button--margin button primary"
+        >
+          <span>
+            Login
+          </span>
+           
+          <span>
+            <!---->
+          </span>
+        </button>
+      </form>
+    </div>
+  </div>
+</transition-stub>
+`;
