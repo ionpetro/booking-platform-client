@@ -7,7 +7,7 @@
   max-height: 1200px;
 
   // tablet
-  @media only screen and (max-width: $medium-breakpoint) {
+  @media #{$tablet} {
     display: none;
   }
   // portrait screen
@@ -50,7 +50,7 @@
   text-align: center;
 
   // mobile
-  @media only screen and (max-width: $small-breakpoint) {
+  @media #{$mobile} {
     margin-top: 48px;
   }
 }
@@ -58,16 +58,16 @@
   width: 480px;
   margin: auto;
 
+  // tablet
+  @media #{$tablet} {
+    width: 480px;
+    margin: auto;
+  }
   // mobile
-  @media only screen and (max-width: $small-breakpoint) {
+  @media #{$mobile} {
     width: 100%;
     margin-left: 16px;
     margin-right: 16px;
-  }
-  // tablet
-  @media only screen and (max-width: $medium-breakpoint) {
-    width: 480px;
-    margin: auto;
   }
   // portrait screen
   @media only screen and (min-width: $medium-breakpoint) and (min-height: 1300px) {

@@ -24,12 +24,12 @@
   }
 
   // The button size is relevant to the window size
-  @media only screen and (max-width: $medium-breakpoint) {
+  @media #{$tablet} {
     padding: rem(12) rem(36);
   }
 
   // The button size is relevant to the window size
-  @media only screen and (max-width: $small-breakpoint) {
+  @media #{$mobile} {
     padding: rem(8) rem(24);
   }
 }

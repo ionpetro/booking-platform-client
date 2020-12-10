@@ -1,36 +1,55 @@
 .input {
   position: relative;
-}
-// text and password input
-.input__text {
-  background: #ffffff;
+  // text and password input
+  &__text {
+    background: #ffffff;
 
-  /* Gray/ dim */
-  border: 1px solid $gray-dim;
-  box-sizing: border-box;
-  height: 56px;
-  width: 480px;
-  padding-left: 24px;
-  border-radius: 20px;
-  color: $secondary;
-  font-size: 1rem;
-  margin-top: 55px;
+    /* Gray/ dim */
+    border: 1px solid $gray-dim;
+    box-sizing: border-box;
+    height: 56px;
+    width: 480px;
+    padding-left: 24px;
+    border-radius: 20px;
+    color: $secondary;
+    font-size: 1rem;
+    margin-top: 55px;
 
-  &:focus {
-    border: 1px solid $secondary;
-    outline: none;
-    & + label {
-      color: $secondary !important;
+    &:focus {
+      border: 1px solid $secondary;
+      outline: none;
+      & + label {
+        color: $secondary;
+      }
+    }
+
+    // mobile
+    @media #{$mobile} {
+      width: 100%;
+      max-height: 44px;
+      border-radius: 15px;
     }
   }
 
-  // mobile
-  @media only screen and (max-width: $small-breakpoint) {
-    width: 100%;
-    max-height: 44px;
-    border-radius: 15px;
+  &__errors {
+    border: 1px solid $red-medium;
+  }
+
+  &__icon {
+    position: absolute;
+    // input width - (icon width + distance from edge)
+    left: #{480- (24+25)}px;
+    bottom: 10px;
+
+    // mobile
+    @media #{$mobile} {
+      right: 20px;
+      left: auto;
+      bottom: 5px;
+    }
   }
 }
+
 // text and password label
 .label__text {
   color: $gray-dim;
@@ -43,24 +62,6 @@
   font-size: 0.8rem;
 }
 
-.input__errors {
-  border: 1px solid $red-medium;
-}
-
 .label__errors {
   color: $red-medium;
-}
-
-.input__icon {
-  position: absolute;
-  // input width - (icon width + distance from edge)
-  left: #{480- (24+25)}px;
-  bottom: 10px;
-
-  // mobile
-  @media only screen and (max-width: $small-breakpoint) {
-    right: 20px;
-    left: auto;
-    bottom: 5px;
-  }
 }

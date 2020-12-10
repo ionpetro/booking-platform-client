@@ -56,3 +56,13 @@ $light: 400;
 //breakpoints
 $small-breakpoint: 576px;
 $medium-breakpoint: 1080px;
+
+//media queries
+$mobile: only screen and
+  (
+    max-width: $small-breakpoint
+  );
+$tablet: only screen and
+  (
+    max-width: $medium-breakpoint
+  );
