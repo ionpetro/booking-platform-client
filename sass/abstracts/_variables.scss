@@ -19,19 +19,19 @@ $yellow-dark: #cba646;
 $yellow-dim: #e5ba4f;
 $yellow-medium: #fecf58;
 $yellow-light: #fedd8a;
-$yellow-tint: #ffecbc;
+$yellow-tint: #fff4d8;
 
 $green-dark: #005b41;
 $green-dim: #007453;
 $green-medium: #00a676;
 $green-light: #4dc19f;
-$green-tint: #bfe9dd;
+$green-tint: #e9fbf6;
 
 $red-dark: #97141f;
 $red-dim: #ac1724;
 $red-medium: #db3442;
 $red-light: #e77781;
-$red-tint: #f3bbc0;
+$red-tint: #f5e4e4;
 
 $gray-dark: #525252;
 $gray-dim: #a8a8a8;
@@ -54,6 +54,15 @@ $bold: 500;
 $light: 400;
 
 //breakpoints
-$small-breakpoint: 360px;
-$medium-breakpoint: 768px;
-$large-breakpoint: 1200px;
+$small-breakpoint: 576px;
+$medium-breakpoint: 1080px;
+
+//media queries
+$mobile: only screen and
+  (
+    max-width: $small-breakpoint
+  );
+$tablet: only screen and
+  (
+    max-width: $medium-breakpoint
+  );

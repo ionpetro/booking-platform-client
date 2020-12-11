@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "marios",
+      "password": "typicode"
+    },
+    {
+      "id": 2,
+      "username": "ion",
+      "password": "typicode"
+    },
+    {
+      "username": "ion@1234.co",
+      "password": "password",
+      "id": 3
+    }
+  ]
+}

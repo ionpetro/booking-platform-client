@@ -1,0 +1,42 @@
+.message {
+  display: flex;
+  padding: 12px 14px;
+  width: 480px;
+  height: 48px;
+  border-radius: 20px;
+  margin-top: 30px;
+
+  &.error {
+    background-color: $red-tint;
+    color: $red-dark;
+  }
+  &.warning {
+    background-color: $yellow-tint;
+    color: $yellow-dark;
+  }
+  &.success {
+    background-color: $green-tint;
+    color: $green-dark;
+  }
+  // mobile
+  @media #{$mobile} {
+    width: 100%;
+    height: 35px;
+    font-size: 14px;
+  }
+}
+
+.text {
+  padding-left: 15px;
+  // mobile
+  @media #{$mobile} {
+    margin-top: -5px;
+  }
+}
+
+.icon {
+  // mobile
+  @media #{$mobile} {
+    margin-top: -6px;
+  }
+}

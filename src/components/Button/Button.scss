@@ -1,0 +1,55 @@
+@mixin button($color) {
+  background: $color;
+
+  &:hover {
+    @if $color == $primary {
+      background-color: $orange-dim;
+    } @else {
+      background-color: $blue-dim;
+    }
+  }
+  &:disabled {
+    @if $color == $primary {
+      background-color: $orange-light;
+    } @else {
+      background-color: $blue-light;
+    }
+  }
+  &:focus-visible {
+    @if $color == $primary {
+      box-shadow: 0 0 0 3px $orange-light;
+    } @else {
+      box-shadow: 0 0 0 3px $blue-light;
+    }
+  }
+
+  // The button size is relevant to the window size
+  @media #{$tablet} {
+    padding: rem(12) rem(36);
+  }
+
+  // The button size is relevant to the window size
+  @media #{$mobile} {
+    padding: rem(8) rem(24);
+  }
+}
+
+.button {
+  color: white;
+  font-weight: 500;
+  padding: rem(16) rem(42);
+  outline: none;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: $base-font-size;
+  border: none;
+  display: flex;
+}
+
+.primary {
+  @include button($primary);
+}
+
+.secondary {
+  @include button($secondary);
+}
