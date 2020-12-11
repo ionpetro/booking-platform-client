@@ -11,7 +11,13 @@
     <label class="label__text" :class="['label__text', {label__errors: errors}]" for="name">{{
       labelName
     }}</label>
-    <div class="input__icon" @click="showPassword" v-if="type === 'password'">
+    <div
+      class="input__icon"
+      @click="showPassword"
+      v-if="type === 'password'"
+      tabindex="0"
+      @keyup.space="showPassword"
+    >
       <img v-show="showEye" src="@/assets/icons/Eye.svg" alt="show password" />
       <img v-show="!showEye" src="@/assets/icons/Eye-Off.svg" alt="hide password" />
     </div>

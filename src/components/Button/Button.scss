@@ -17,9 +17,9 @@
   }
   &:focus-visible {
     @if $color == $primary {
-      box-shadow: 0 0 0 2px $orange-light;
+      box-shadow: 0 0 0 3px $orange-light;
     } @else {
-      box-shadow: 0 0 0 2px $blue-light;
+      box-shadow: 0 0 0 3px $blue-light;
     }
   }
 

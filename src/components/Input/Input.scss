@@ -47,21 +47,41 @@
       left: auto;
       bottom: 5px;
     }
+
+    // add border when focusing with tab
+    &:focus {
+      outline: none;
+
+      img {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+
+      img {
+        outline: none;
+        box-shadow: 0 0 0 2px $orange-light;
+      }
+    }
   }
 }
 
 // text and password label
-.label__text {
-  color: $gray-dim;
-  position: absolute;
-  z-index: 1;
-  left: 17px;
-  top: 45px;
-  padding: 0 8px;
-  background-color: white;
-  font-size: 0.8rem;
-}
-
-.label__errors {
-  color: $red-medium;
+.label {
+  &__text {
+    color: $gray-dim;
+    position: absolute;
+    z-index: 1;
+    left: 17px;
+    top: 45px;
+    padding: 0 8px;
+    background-color: white;
+    font-size: 0.8rem;
+  }
+  &__errors {
+    color: $red-medium;
+  }
 }

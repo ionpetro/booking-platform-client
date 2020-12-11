@@ -49,11 +49,8 @@ export default {
       return re.test(username);
     },
     handleLogin() {
-      // validate form and check for errors
-      this.checkForm();
       // if you find errors, interrupt login
       if (this.checkForm()) {
-        this.loading = false;
         return;
       }
       this.loading = true;
