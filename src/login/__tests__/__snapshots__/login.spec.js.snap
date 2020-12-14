@@ -35,7 +35,7 @@ exports[`Login when loaded renders correctly 1`] = `
       <h1
         class="heading"
       >
-        Welcome Back
+        Welcome to Mars era
       </h1>
        
       <transition-stub
@@ -93,6 +93,7 @@ exports[`Login when loaded renders correctly 1`] = `
              
             <div
               class="input__icon"
+              tabindex="0"
             >
               <img
                 alt="show password"

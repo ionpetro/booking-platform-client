@@ -1,6 +1,6 @@
 .message {
   display: flex;
-  padding: 12px 14px;
+  padding: 13px 14px;
   width: 480px;
   height: 48px;
   border-radius: 20px;
@@ -18,25 +18,25 @@
     background-color: $green-tint;
     color: $green-dark;
   }
+  &__text {
+    padding-left: 15px;
+  }
+
+  &__icon {
+    // mobile
+    @media #{$mobile} {
+      margin: auto 0;
+    }
+  }
+
   // mobile
   @media #{$mobile} {
     width: 100%;
-    height: 35px;
     font-size: 14px;
   }
-}
 
-.text {
-  padding-left: 15px;
-  // mobile
-  @media #{$mobile} {
-    margin-top: -5px;
-  }
-}
-
-.icon {
-  // mobile
-  @media #{$mobile} {
-    margin-top: -6px;
+  // vertical align on extra small screens
+  @media only screen and (max-width: 450px) {
+    height: auto;
   }
 }

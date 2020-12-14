@@ -7,7 +7,7 @@
       </div>
       <div class="content">
         <img class="logo" src="@/assets/images/blue.png" alt="logo" />
-        <h1 class="heading">Welcome Back</h1>
+        <h1 class="heading">Welcome to Mars era</h1>
         <transition name="fade">
           <v-message type="error" v-if="message">{{ message }}</v-message>
         </transition>

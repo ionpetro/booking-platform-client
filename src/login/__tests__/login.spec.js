@@ -42,13 +42,13 @@ describe('Login', () => {
     };
     it('shows error when username or password is empty', async () => {
       await fillLoginFieldAndSubmit('', 'test');
-      assertErrorMessage('* Please, fill your username.');
+      assertErrorMessage('Please fill out your username.');
 
       await fillLoginFieldAndSubmit('test@1234.co', '');
-      assertErrorMessage('* Please, fill your password.');
+      assertErrorMessage('Please fill out your password.');
 
       await fillLoginFieldAndSubmit('test', 'test');
-      assertErrorMessage('* Please, correct your username');
+      assertErrorMessage('Please correct your username');
     });
 
     it('hits login API with correct credentials and redirects to home page', async () => {

@@ -33,13 +33,13 @@ export default {
       this.errors = {};
 
       if (!this.user.username) {
-        this.errors.username = '* Please, fill your username.';
+        this.errors.username = 'Please fill out your username.';
       } else if (!this.validUsername(this.user.username)) {
-        this.errors.username = '* Please, correct your username';
+        this.errors.username = 'Please correct your username';
       }
 
       if (!this.user.password) {
-        this.errors.password = '* Please, fill your password.';
+        this.errors.password = 'Please fill out your password.';
       }
       // returns the number of errors found
       return Object.keys(this.errors).length;
