@@ -8,6 +8,15 @@ exports[`Login when loaded renders correctly 1`] = `
     class="login"
   >
     <div
+      class="cancel"
+    >
+      <img
+        alt=""
+        src="@/assets/icons/Remove.svg"
+      />
+    </div>
+     
+    <div
       class="hero-container"
     >
       <img

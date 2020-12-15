@@ -75,6 +75,9 @@ export default {
     },
     clickCheckbox() {
       this.remember = !this.remember;
+    },
+    goBack() {
+      this.$router.push('/');
     }
   },
   created() {
