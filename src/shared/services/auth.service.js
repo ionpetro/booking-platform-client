@@ -29,7 +29,7 @@ export default class AuthService {
       .catch(err => {
         if (err.response && err.response.status === 403) {
           // Request made and server responded
-          throw new Error('Your credentials are invalid');
+          throw new Error('Your credentials are invalid. Please check your spelling');
         }
         if (err.request) {
           // The request was made but no response was received

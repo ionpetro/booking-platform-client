@@ -1,13 +1,16 @@
 <template>
   <transition name="fade">
     <div class="login" v-if="show">
+      <div class="cancel" @click="goBack">
+        <img src="@/assets/icons/Remove.svg" alt="Cancel icon" />
+      </div>
       <div class="hero-container">
         <img class="hero" src="@/assets/images/hero.png" alt="hero" />
         <img class="hero-big" src="@/assets/images/hero-big.png" alt="hero-big" />
       </div>
       <div class="content">
         <img class="logo" src="@/assets/images/blue.png" alt="logo" />
-        <h1 class="heading">Welcome Back</h1>
+        <h1 class="heading">Welcome to Mars era</h1>
         <transition name="fade">
           <v-message type="error" v-if="message">{{ message }}</v-message>
         </transition>

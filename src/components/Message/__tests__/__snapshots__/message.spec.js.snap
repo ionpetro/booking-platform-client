@@ -5,7 +5,7 @@ exports[`Message when loaded renders correctly 1`] = `
   class="message error"
 >
   <div
-    class="icon"
+    class="message__icon"
   >
     <img
       alt="error-icon"
@@ -14,7 +14,7 @@ exports[`Message when loaded renders correctly 1`] = `
   </div>
    
   <div
-    class="text"
+    class="message__text"
   />
 </div>
 `;

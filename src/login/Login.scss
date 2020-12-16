@@ -1,6 +1,19 @@
 .login {
   display: flex;
 }
+
+.cancel {
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  transition: transform 0.2s ease-in;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
 .hero {
   float: left;
   height: 90vh;
@@ -88,6 +101,7 @@
 .errors {
   color: $red-medium;
   position: absolute;
+  padding-left: 15px;
 }
 
 .checkbox {

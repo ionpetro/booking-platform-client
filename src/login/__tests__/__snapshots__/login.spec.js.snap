@@ -8,6 +8,15 @@ exports[`Login when loaded renders correctly 1`] = `
     class="login"
   >
     <div
+      class="cancel"
+    >
+      <img
+        alt=""
+        src="@/assets/icons/Remove.svg"
+      />
+    </div>
+     
+    <div
       class="hero-container"
     >
       <img
@@ -35,7 +44,7 @@ exports[`Login when loaded renders correctly 1`] = `
       <h1
         class="heading"
       >
-        Welcome Back
+        Welcome to Mars era
       </h1>
        
       <transition-stub
@@ -93,6 +102,7 @@ exports[`Login when loaded renders correctly 1`] = `
              
             <div
               class="input__icon"
+              tabindex="0"
             >
               <img
                 alt="show password"
