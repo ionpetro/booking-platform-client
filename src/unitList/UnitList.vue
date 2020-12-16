@@ -1,10 +1,13 @@
 <template>
   <div>
-    <h1>UnitList</h1>
     <a href @click.prevent="logOut">Logout</a>
-    <v-message :type="'error'" v-if="message">{{ message }}</v-message>
-    <div v-for="unit of units" :key="unit.id">
-      <UnitCard :unit="unit"></UnitCard>
+    <transition name="fade">
+      <v-message class="list__error" :type="'error'" v-if="message">{{ message }}</v-message>
+    </transition>
+    <div class="list">
+      <div v-for="unit of units" :key="unit.id" class="list__card">
+        <UnitCard :unit="unit"></UnitCard>
+      </div>
     </div>
     <div
       class="visibilityElement"

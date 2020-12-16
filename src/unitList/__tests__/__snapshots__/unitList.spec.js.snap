@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UnitList when loaded renders correctly 1`] = `
+<div>
+  <a
+    href=""
+  >
+    Logout
+  </a>
+   
+  <transition-stub
+    name="fade"
+  >
+    <!---->
+  </transition-stub>
+   
+  <div
+    class="list"
+  />
+   
+  <!---->
+</div>
+`;
