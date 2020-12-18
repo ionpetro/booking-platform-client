@@ -8,6 +8,7 @@
   top: 25px;
   right: 25px;
   transition: transform 0.2s ease-in;
+  filter: invert(0.5);
 
   &:hover {
     transform: scale(1.1);
