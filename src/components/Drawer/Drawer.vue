@@ -1,6 +1,6 @@
 <template>
-  <section v-if="enabled">
-    <aside class="sidebar" :style="style" ref="element">
+  <section :class="active ? 'openDrawer' : 'closeDrawer'">
+    <aside class="sidebar" ref="element">
       <div @click="close" class="sidebar__close">
         <img src="@/assets/icons/Remove.svg" alt="Cancel Icon" />
       </div>

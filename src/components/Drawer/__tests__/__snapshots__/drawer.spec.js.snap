@@ -1,3 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Drawer when loaded renders correctly 1`] = `<!---->`;
+exports[`Drawer when loaded renders correctly 1`] = `
+<section
+  class="closeDrawer"
+>
+  <aside
+    class="sidebar"
+  >
+    <div
+      class="sidebar__close"
+    >
+      <img
+        alt="Cancel Icon"
+        src="@/assets/icons/Remove.svg"
+      />
+    </div>
+     
+  </aside>
+   
+  <div
+    class="overlay"
+  />
+</section>
+`;

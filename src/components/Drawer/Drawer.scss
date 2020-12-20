@@ -1,22 +1,23 @@
 .overlay {
   position: fixed;
   z-index: -999;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
   background: rgba(11, 10, 12, 0.35);
   opacity: 0;
   width: 100%;
   height: 100%;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .sidebar {
+  right: 0;
   z-index: 9999;
   position: fixed;
   will-change: transform;
   height: 100%;
-  top: 0px;
-  transition: transform 0.3s ease;
+  top: 0;
+  transition: transform 0.5s ease-in-out;
   background: #fff;
   width: 780px;
   overflow-y: auto;
@@ -34,7 +35,6 @@
     left: 16px;
     top: 16px;
     border-radius: 50%;
-
     background: rgba(0, 0, 0, 0.39);
     box-shadow: 0px 4px 10px rgba(109, 109, 109, 0.25);
 
@@ -45,7 +45,19 @@
 
   // for tablet and smaller screens
   // the drawer cover the hole screen
-  @media #{$tablet} {
+  @media only screen and (max-width: 780px) {
     width: 100vw;
+  }
+}
+
+.openDrawer {
+  .sidebar {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.closeDrawer {
+  .sidebar {
+    transform: translate3d(100%, 0, 0);
   }
 }
