@@ -11,7 +11,7 @@ exports[`Login when loaded renders correctly 1`] = `
       class="cancel"
     >
       <img
-        alt=""
+        alt="Cancel icon"
         src="@/assets/icons/Remove.svg"
       />
     </div>

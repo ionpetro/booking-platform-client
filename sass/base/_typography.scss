@@ -26,14 +26,6 @@ html {
     h5 {
       font-size: 1.25rem;
     }
-
-    small {
-      font-size: 0.87rem;
-    }
-
-    .extra-small {
-      font-size: 0.62rem;
-    }
   }
 
   // small breakpoint
@@ -56,14 +48,6 @@ html {
 
     h5 {
       font-size: 1.25rem;
-    }
-
-    small {
-      font-size: 0.87rem;
-    }
-
-    .extra-small {
-      font-size: 0.62rem;
     }
   }
 }
@@ -97,10 +81,10 @@ h5 {
   font-size: 1.25rem;
 }
 
-small {
-  font-size: 0.75rem;
+.body--large {
+  font-size: 1.12rem;
 }
 
-.extra-small {
-  font-size: 0.62rem;
+.body--small {
+  font-size: 0.87rem;
 }

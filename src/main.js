@@ -1,5 +1,6 @@
-import {VueSpinners} from '@saeris/vue-spinners';
 import Vue from 'vue';
+import VueObserveVisibility from 'vue-observe-visibility';
+import {VueSpinners} from '@saeris/vue-spinners';
 import VueCookies from 'vue-cookies';
 import App from './App.vue';
 import router from './router';
@@ -10,8 +11,10 @@ import interceptorsSetup from './shared/helpers/interceptors';
 interceptorsSetup();
 
 Vue.use(VueCookies);
-Vue.config.productionTip = false;
 Vue.use(VueSpinners);
+Vue.use(VueObserveVisibility);
+
+Vue.config.productionTip = false;
 
 // set secure, only https works
 Vue.$cookies.config('', '', '', true);

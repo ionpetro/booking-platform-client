@@ -1,0 +1,105 @@
+.card {
+  position: relative;
+  width: 400px;
+  transition: transform 0.25s ease-in;
+  cursor: pointer;
+
+  @media only screen and (max-width: $medium-breakpoint) {
+    width: 328px;
+  }
+
+  &__image {
+    width: 400px;
+    height: 200px;
+    border-radius: 4px 30px;
+    margin-bottom: 125px;
+    overflow: hidden;
+
+    img {
+      width: 400px;
+      height: 200px;
+    }
+    @media only screen and (max-width: $medium-breakpoint) {
+      width: 328px;
+      height: 160px;
+    }
+  }
+
+  &__image--zoom {
+    img {
+      transform-origin: 50% 65%;
+      transition: transform 0.25s ease-in-out;
+    }
+  }
+
+  &__info {
+    position: absolute;
+    left: 60px;
+    top: 176px;
+    background-color: $white;
+    height: 126px;
+    width: 288px;
+    border-radius: 4px;
+    padding: 0 30px;
+    box-shadow: 0px 4px 20px rgba(83, 83, 83, 0.15);
+    transition: transform 0.25s ease-in-out;
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      left: 22px;
+      top: 140px;
+    }
+
+    &__distance {
+      color: $gray-dim;
+    }
+  }
+
+  &__price {
+    padding-top: 14px;
+    margin: 0;
+    &__amount {
+      font-weight: 700;
+    }
+
+    &__discount {
+      color: $red-medium;
+      text-decoration: line-through;
+      padding-right: 2px;
+    }
+  }
+
+  &__location {
+    padding-top: 10px;
+  }
+
+  &__amenities {
+    padding-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+
+    div {
+      display: flex;
+      span {
+        padding: 4px 20px 4px 4px;
+      }
+    }
+  }
+
+  &:hover {
+    transform: scale(1.03);
+
+    .card__image {
+      box-shadow: 0px 4px 20px rgba(83, 83, 83, 0.15);
+    }
+
+    .card__info {
+      transform: scale(0.95);
+      box-shadow: 0px 4px 10px rgba(83, 83, 83, 0.15);
+    }
+    .card__image--zoom {
+      img {
+        transform: scale(1.08);
+      }
+    }
+  }
+}

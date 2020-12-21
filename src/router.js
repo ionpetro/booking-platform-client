@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Login from './login/Login.vue';
+import UnitList from './unitList/UnitList.vue';
 import Home from './home/Home.vue';
 
 Vue.use(Router);
@@ -17,12 +18,17 @@ const router = new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/units',
+      name: 'units',
+      component: UnitList
     }
   ]
 });
 
 router.beforeEach((to, from, next) => {
-  const publicPages = ['/login'];
+  const publicPages = ['/login', '/'];
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = localStorage.getItem('user') || sessionStorage.getItem('user');
 

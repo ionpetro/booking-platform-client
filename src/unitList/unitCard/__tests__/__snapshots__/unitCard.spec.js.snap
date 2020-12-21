@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UnitCard when loaded renders correctly 1`] = `
+<div
+  class="card"
+>
+  <div
+    class="card__image card__image--zoom"
+  >
+    <img
+      alt="Unit Image"
+      src="image"
+    />
+  </div>
+   
+  <div
+    class="card__info"
+  >
+    <div
+      class="card__price"
+    >
+      <span
+        class="body--small card__price__discount"
+      >
+        2
+      </span>
+       
+      <span
+        class="body--large card__price__amount"
+      >
+        1
+        
+        <img
+          alt="Bitcoin icon"
+          src="@/assets/icons/Bitcoin.svg"
+        />
+      </span>
+    </div>
+     
+    <div
+      class="card__location"
+    >
+      
+      name, 1
+      
+      <span
+        class="card__info__distance"
+      >
+        • 1pt from center
+      </span>
+    </div>
+     
+    <div
+      class="card__amenities"
+    >
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,44 @@
+.list {
+  margin: auto;
+  margin-top: 180px;
+  width: 1744px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__error {
+    position: fixed;
+    z-index: 9999;
+    margin: 50px auto;
+    left: 0;
+    right: 0;
+  }
+
+  &__card {
+    margin: auto;
+  }
+
+  @media only screen and (max-width: 1919px) {
+    width: 1300px;
+  }
+
+  @media only screen and (max-width: 1440px) {
+    width: 840px;
+  }
+
+  @media only screen and (max-width: $medium-breakpoint) {
+    width: 680px;
+  }
+
+  @media only screen and (max-width: 720px) {
+    width: auto;
+    align-items: center;
+    // display: block;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+.visibilityElement {
+  height: 10px;
+}

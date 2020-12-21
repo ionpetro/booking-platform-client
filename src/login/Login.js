@@ -57,7 +57,7 @@ export default {
       authService
         .login(this.user, this.remember)
         .then(() => {
-          this.$router.push('/');
+          this.$router.push('/units');
         })
         .catch(error => {
           this.loading = false;
