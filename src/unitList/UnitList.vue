@@ -4,9 +4,17 @@
     <transition name="fade">
       <v-message class="list__error" :type="'error'" v-if="message">{{ message }}</v-message>
     </transition>
-    <Drawer v-if="isDrawerOpened" ref="Drawer" @onDrawerClosed="onDrawerClosed"></Drawer>
+    <Drawer v-if="isDrawerOpened" @onDrawerClosed="onDrawerClosed"
+      ><UnitDetails :selectedUnitId="selectedUnitId"></UnitDetails
+    ></Drawer>
     <div class="list">
-      <div v-for="unit of units" :key="unit.id" class="list__card" tabindex="0" @click="openDrawer">
+      <div
+        v-for="unit of units"
+        :key="unit.id"
+        class="list__card"
+        tabindex="0"
+        @click="openDrawer(unit.id)"
+      >
         <UnitCard :unit="unit"></UnitCard>
       </div>
     </div>
@@ -23,4 +31,4 @@
 
 <script src="./UnitList.js"></script>
 
-<style lang="scss" src="./UnitList.scss"></style>
+<style lang="scss" src="./UnitList.scss" scoped></style>

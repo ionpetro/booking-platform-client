@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UnitBook when loaded renders data correctly 1`] = `
+<div
+  class="book"
+>
+  <div
+    class="book__container"
+  >
+    <div
+      class="book__container__price"
+    >
+      <span
+        class="body--small book__container__price__discount"
+      >
+        1500
+      </span>
+       
+      <span
+        class="body--large book__container__price__amount"
+      >
+        1100
+        
+        <img
+          alt="Bitcoin icon"
+          src="@/assets/icons/Bitcoin.svg"
+        />
+      </span>
+    </div>
+     
+    <button
+      class="btn button secondary"
+    >
+      Book
+    </button>
+  </div>
+</div>
+`;

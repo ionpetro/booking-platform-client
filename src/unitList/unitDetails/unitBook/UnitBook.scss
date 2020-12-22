@@ -1,0 +1,33 @@
+.book {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // push content to left so the content is aligned
+    margin-right: 24px;
+
+    &__price {
+      padding: 24px 0 26px 24px;
+      margin: 0;
+      &__amount {
+        font-weight: 700;
+      }
+
+      &__discount {
+        color: $red-medium;
+        text-decoration: line-through;
+        padding-right: 2px;
+      }
+
+      @media #{$mobile} {
+        // align price with container
+        padding: 26px 0 26px 16px;
+      }
+    }
+
+    @media #{$mobile} {
+      // adapt content to align with container
+      margin-right: 16px;
+    }
+  }
+}
