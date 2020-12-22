@@ -6,7 +6,7 @@ export default function setup() {
     config => {
       const user =
         JSON.parse(localStorage.getItem('user')) || JSON.parse(sessionStorage.getItem('user'));
-      const token = Vue.$cookies.get('jwtAuth');
+      const token = Vue.$cookies.get('accessToken');
       return user && token
         ? {...config, headers: {...config.headers, Authorization: `Bearer ${token}`}}
         : config;
