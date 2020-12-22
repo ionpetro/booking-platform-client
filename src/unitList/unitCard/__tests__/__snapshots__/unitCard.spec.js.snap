@@ -51,7 +51,7 @@ exports[`UnitCard when loaded renders correctly 1`] = `
     </div>
      
     <div
-      class="card__amenities"
+      class="card__characteristics"
     >
       <!---->
        
