@@ -1,25 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Drawer when loaded renders correctly 1`] = `
-<section
-  class="closeDrawer"
+<div
+  class="drawer-overlay"
 >
-  <aside
-    class="sidebar"
+  <div
+    class="drawer-overlay__slider drawer-overlay__slider--slide-out"
   >
     <div
-      class="sidebar__close"
+      class="drawer-overlay__slider__header"
     >
       <img
-        alt="Cancel Icon"
+        alt="Close drawer button"
+        class="drawer-overlay__slider__header__remove"
         src="@/assets/icons/Remove.svg"
+      />
+       
+      <img
+        alt="Go back button"
+        class="drawer-overlay__slider__header__back"
+        src="@/assets/icons/Back.svg"
       />
     </div>
      
-  </aside>
-   
-  <div
-    class="overlay"
-  />
-</section>
+  </div>
+</div>
 `;

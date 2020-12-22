@@ -1,13 +1,30 @@
 <template>
-  <section :class="active ? 'openDrawer' : 'closeDrawer'">
-    <aside class="sidebar" ref="element">
-      <div @click="close" class="sidebar__close">
-        <img src="@/assets/icons/Remove.svg" alt="Cancel Icon" />
+  <div class="drawer-overlay">
+    <div
+      :class="[
+        'drawer-overlay__slider',
+        this.active ? 'drawer-overlay__slider--slide-in' : 'drawer-overlay__slider--slide-out'
+      ]"
+    >
+      <div @click="close" class="drawer-overlay__slider__header">
+        <img
+          class="drawer-overlay__slider__header__remove"
+          src="@/assets/icons/Remove.svg"
+          alt="Close drawer button"
+        />
+        <img
+          class="drawer-overlay__slider__header__back"
+          src="@/assets/icons/Back.svg"
+          alt="Go back button"
+        />
       </div>
-      <slot></slot>
-    </aside>
-    <div class="overlay" ref="overlay"></div>
-  </section>
+      <slot>
+        <!-- Dynamic content will be loaded here-->
+      </slot>
+    </div>
+  </div>
 </template>
+
 <script src="./Drawer.js"></script>
-<style lang="scss" src="./Drawer.scss"></style>
+
+<style lang="scss" src="./Drawer.scss" scoped></style>

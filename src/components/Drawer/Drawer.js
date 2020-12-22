@@ -1,75 +1,49 @@
 export default {
+  name: 'Drawer',
   data() {
     return {
-      active: false
+      active: false,
+      isDrawerOpened: false
     };
   },
-  computed: {
-    element() {
-      return this.$refs.element;
-    },
-    overlay() {
-      return this.$refs.overlay;
+  watch: {
+    active() {
+      document.body.style.overflow = this.active ? 'hidden' : '';
     }
   },
   mounted() {
-    this.addTransitionListener();
+    this.open();
+    this.addOnKeyPressListener();
     this.addOnClickListener();
   },
   destroyed() {
-    window.removeEventListener('transitionend', this.transitionListener, false);
+    window.removeEventListener('keydown', this.keyDownListener, false);
     window.removeEventListener('click', this.clickListener, false);
   },
   methods: {
-    addTransitionListener() {
-      this.overlay.addEventListener('transitionend', this.transitionListener, false);
-    },
     addOnClickListener() {
-      this.overlay.addEventListener('click', this.clickListener, false);
+      document
+        .querySelector('div.drawer-overlay')
+        .addEventListener('click', this.clickListener, false);
     },
-    clickListener() {
-      this.close();
+    addOnKeyPressListener() {
+      document.addEventListener('keydown', this.keyDownListener, false);
     },
-    transitionListener(event) {
-      this.handleZIndex(event);
+    keyDownListener(e) {
+      // If key pressed is ESC then close drawer
+      if (e.keyCode === 27) this.close();
     },
-    /**
-     * HandleZIndex is executed when the drawer transition is finished
-     * due to the transitionListener. This way, the overlay will go to
-     * the back when drawer is closed and overlay opacity hits 0.
-     */
-    handleZIndex() {
-      const opacity = window.getComputedStyle(this.overlay).getPropertyValue('opacity');
-      if (opacity <= 0) {
-        this.overlay.style.zIndex = -999;
-      }
-    },
-    overlayOpacity(opacity) {
-      this.overlay.style.opacity = opacity;
-      if (opacity > 0) {
-        this.overlay.style.zIndex = 999;
-      }
+    clickListener(e) {
+      // If the event target element is the overlay itself then close drawer
+      if (e.target.className === 'drawer-overlay') this.close();
     },
     open() {
-      this.overlayOpacity(1);
-      this.lock(document.querySelector('html'));
-      this.lock(document.querySelector('body'));
       this.active = true;
     },
     close() {
-      this.overlayOpacity(0);
-      this.unlock(document.querySelector('html'));
-      this.unlock(document.querySelector('body'));
       this.active = false;
-    },
-    lock(element) {
-      const updatedElement = element;
-      updatedElement.style.overflow = 'hidden';
-      updatedElement.style.touchAction = 'none';
-    },
-    unlock(element) {
-      element.style.removeProperty('overflow');
-      element.style.removeProperty('touch-action');
+      // Set 500ms timeout in order slide out effect to be completed before component is unmounted
+      setTimeout(() => this.$emit('onDrawerClosed', true), 500);
     }
   }
 };
