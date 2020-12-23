@@ -14,6 +14,8 @@ exports[`UnitList when loaded renders correctly 1`] = `
     <!---->
   </transition-stub>
    
+  <!---->
+   
   <div
     class="list"
   />

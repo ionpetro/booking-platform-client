@@ -2,6 +2,7 @@ import AuthService from '../shared/services/auth.service';
 import UnitService from './unit.service';
 import Message from '../components/Message/Message.vue';
 import UnitCard from './unitCard/UnitCard.vue';
+import Drawer from '../components/Drawer/Drawer.vue';
 
 const authService = new AuthService();
 const unitService = new UnitService();
@@ -9,6 +10,7 @@ const unitService = new UnitService();
 export default {
   name: 'UnitList',
   components: {
+    Drawer,
     UnitCard,
     'v-message': Message
   },
@@ -19,7 +21,8 @@ export default {
       page: 1,
       size: 16,
       totalPages: 1,
-      units: []
+      units: [],
+      isDrawerOpened: false
     };
   },
   mounted() {
@@ -48,6 +51,12 @@ export default {
     logOut() {
       authService.logout();
       this.$router.push('/login');
+    },
+    openDrawer() {
+      this.isDrawerOpened = true;
+    },
+    onDrawerClosed() {
+      this.isDrawerOpened = false;
     }
   }
 };

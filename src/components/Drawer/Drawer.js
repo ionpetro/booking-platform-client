@@ -1,96 +1,49 @@
 export default {
-  props: ['exist'],
+  name: 'Drawer',
   data() {
     return {
-      speed: '0.6s',
-      startTime: null,
-      startPos: null,
-      translate: null,
       active: false,
-      visible: true
+      isDrawerOpened: false
     };
   },
-  computed: {
-    element() {
-      return this.$refs.element;
-    },
-    overlay() {
-      return this.$refs.overlay;
-    },
-    enabled() {
-      return this.exist === true;
-    },
-    style() {
-      return 'transform:translate3d(100%,0,0);right:0;';
+  watch: {
+    active() {
+      document.body.style.overflow = this.active ? 'hidden' : '';
     }
   },
   mounted() {
-    document.addEventListener('DOMContentLoaded', () => {
-      this.overlay.addEventListener(
-        'transitionend',
-        e => {
-          this.handleZindex(e);
-        },
-        false
-      );
-      this.overlay.addEventListener(
-        'click',
-        () => {
-          this.close();
-        },
-        false
-      );
-      this.setVisibility();
-    });
+    this.open();
+    this.addOnKeyPressListener();
+    this.addOnClickListener();
+  },
+  destroyed() {
+    window.removeEventListener('keydown', this.keyDownListener, false);
+    window.removeEventListener('click', this.clickListener, false);
   },
   methods: {
-    setVisibility() {
-      if (this.element.offsetWidth === 0) {
-        this.visible = false;
-      } else {
-        this.visible = true;
-      }
+    addOnClickListener() {
+      document
+        .querySelector('div.drawer-overlay')
+        .addEventListener('click', this.clickListener, false);
     },
-    handleZindex() {
-      const opacity = window.getComputedStyle(this.overlay).getPropertyValue('opacity');
-      if (opacity <= 0) {
-        this.overlay.style.zIndex = -999;
-      }
+    addOnKeyPressListener() {
+      document.addEventListener('keydown', this.keyDownListener, false);
     },
-    overlayOpacity(opacity) {
-      this.overlay.style.opacity = opacity;
-      if (opacity > 0) {
-        this.overlay.style.zIndex = 999;
-      }
+    keyDownListener(e) {
+      // If key pressed is ESC then close drawer
+      if (e.keyCode === 27) this.close();
+    },
+    clickListener(e) {
+      // If the event target element is the overlay itself then close drawer
+      if (e.target.className === 'drawer-overlay') this.close();
     },
     open() {
-      this.translate = 0;
-      this.element.style.transform = `translate3d(${this.translate},0,0)`;
-      this.element.style.transitionDuration = this.speed;
-      this.overlayOpacity(1);
-      this.lock(document.querySelector('html'));
-      this.lock(document.querySelector('body'));
-      this.element.classList.add('active');
       this.active = true;
     },
     close() {
-      this.translate = `${this.element.offsetWidth}px`;
-      this.element.style.transform = `translate3d(${this.translate},0,0)`;
-      this.element.style.transitionDuration = this.speed;
-      this.overlayOpacity(0);
-      this.unlock(document.querySelector('html'));
-      this.unlock(document.querySelector('body'));
-      this.element.classList.remove('active');
       this.active = false;
-    },
-    lock(element) {
-      const myElement = element;
-      myElement.style.overflow = 'hidden';
-      myElement.style.touchAction = 'none';
-    },
-    unlock(element) {
-      element.style.removeProperty('overflow');
-      element.style.removeProperty('touch-action');
+      // Set 500ms timeout in order slide out effect to be completed before component is unmounted
+      setTimeout(() => this.$emit('onDrawerClosed', true), 500);
     }
   }
 };

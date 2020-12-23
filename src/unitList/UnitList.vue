@@ -4,8 +4,9 @@
     <transition name="fade">
       <v-message class="list__error" :type="'error'" v-if="message">{{ message }}</v-message>
     </transition>
+    <Drawer v-if="isDrawerOpened" ref="Drawer" @onDrawerClosed="onDrawerClosed"></Drawer>
     <div class="list">
-      <div v-for="unit of units" :key="unit.id" class="list__card">
+      <div v-for="unit of units" :key="unit.id" class="list__card" tabindex="0" @click="openDrawer">
         <UnitCard :unit="unit"></UnitCard>
       </div>
     </div>
