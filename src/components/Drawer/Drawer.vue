@@ -3,7 +3,7 @@
     <div
       :class="[
         'drawer-overlay__slider',
-        this.active ? 'drawer-overlay__slider--slide-in' : 'drawer-overlay__slider--slide-out'
+        active ? 'drawer-overlay__slider--slide-in' : 'drawer-overlay__slider--slide-out'
       ]"
     >
       <div @click="close" class="drawer-overlay__slider__header">
