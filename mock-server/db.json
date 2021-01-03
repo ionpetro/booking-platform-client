@@ -30,13 +30,14 @@
         "Cooking robot"
       ],
       "benefits": [
+        "Wheelchair accessible",
         "Automatic heating",
         "Fitness room",
         "Private portal cabin",
         "Internal pool",
         "Pet friendly"
       ],
-      "reservedYears": [2080, 2081, 2082],
+      "reservedYears": [2080, 2081, 2087],
       "image": "https://i.pinimg.com/originals/a7/6b/9b/a76b9b81f75c573f5c807d521bea35e1.jpg",
       "crater": "Arcadia",
       "imageCrater": "https://i.ibb.co/vdt74gs/Crater.png",
@@ -59,7 +60,8 @@
       "size": 1500,
       "price": 6,
       "address": 3,
-      "discountedPrice": 1300
+      "discount": 0.15,
+      "reservedYears": [2082, 2083, 2088]
     },
     {
       "id": 3,
@@ -612,6 +614,330 @@
       "price": 4,
       "address": 4,
       "discountedPrice": 1300
+    }
+  ],
+  "book": [{
+      "id": 1,
+      "bookDate": "Wed Dec 23 2020 19: 48: 58 GMT + 0200(Eastern European Standard Time)"
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": 2020,
+      "price": 1500,
+      "bookTime": "new Date()",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2085",
+      "price": 1500,
+      "bookTime": "2020-12-23T18:10:47.804Z",
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2082",
+      "price": 1500,
+      "bookTime": "2020-12-23T18:11:13.763Z",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2084",
+      "price": 1500,
+      "bookTime": "2020-12-23T18:12:09.037Z",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2086",
+      "price": 1500,
+      "bookTime": "2020-12-23T18:17:32.640Z",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2084",
+      "price": 1500,
+      "bookTime": "2020-12-23T18:19:36.685Z",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2084",
+      "price": 1500,
+      "bookTime": "2020-12-23T18:27:54.366Z",
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2084",
+      "price": 1500,
+      "bookTime": "2020-12-23T18:29:37.197Z",
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2085",
+      "price": 1500,
+      "bookTime": "2020-12-23T18:31:36.919Z",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2084",
+      "price": 1500,
+      "bookTime": "2020-12-23T18:49:27.029Z",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2083",
+      "price": 1500,
+      "bookTime": "2020-12-23T19:04:27.042Z",
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2084",
+      "price": 1500,
+      "bookTime": "2020-12-23T19:05:11.867Z",
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2088",
+      "price": 1500,
+      "bookTime": "2020-12-24T09:46:56.803Z",
+      "id": 14
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2088",
+      "price": 1500,
+      "bookTime": "2020-12-24T09:47:52.122Z",
+      "id": 15
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2084",
+      "price": 1500,
+      "bookTime": "2020-12-24T09:52:47.823Z",
+      "id": 16
+    },
+    {
+      "userId": 1,
+      "unitId": 2,
+      "bookDate": "2084",
+      "price": 6,
+      "bookTime": "2020-12-24T09:57:42.053Z",
+      "id": 17
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2084",
+      "price": 1500,
+      "bookTime": "2020-12-24T10:17:33.992Z",
+      "id": 18
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2088",
+      "price": 1500,
+      "bookTime": "2020-12-24T10:30:26.353Z",
+      "id": 19
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2084",
+      "price": 1500,
+      "bookTime": "2020-12-24T12:09:11.497Z",
+      "id": 20
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2084",
+      "price": 1500,
+      "bookTime": "2020-12-24T12:14:02.931Z",
+      "id": 21
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2088",
+      "price": 1500,
+      "bookTime": "2020-12-24T13:06:55.176Z",
+      "id": 22
+    },
+    {
+      "userId": 1,
+      "unitId": 2,
+      "bookDate": "2084",
+      "price": 6,
+      "bookTime": "2020-12-24T13:17:37.375Z",
+      "id": 23
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2086",
+      "price": 1500,
+      "bookTime": "2020-12-25T18:46:11.791Z",
+      "id": 24
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2083",
+      "price": 1500,
+      "bookTime": "2020-12-25T18:56:26.715Z",
+      "id": 25
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2085",
+      "price": 1500,
+      "bookTime": "2020-12-25T19:03:26.678Z",
+      "id": 26
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2086",
+      "price": 1500,
+      "bookTime": "2020-12-25T19:04:00.872Z",
+      "id": 27
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2084",
+      "price": 1500,
+      "bookTime": "2020-12-25T19:05:15.340Z",
+      "id": 28
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2088",
+      "price": 1500,
+      "bookTime": "2020-12-25T19:06:37.322Z",
+      "id": 29
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2084",
+      "price": 1500,
+      "bookTime": "2020-12-25T19:20:26.600Z",
+      "id": 30
+    },
+    {
+      "unitId": 1,
+      "bookDate": "2085",
+      "price": 1500,
+      "bookTime": "2020-12-30T19:17:37.261Z",
+      "id": 31
+    },
+    {
+      "unitId": 1,
+      "bookDate": "2084",
+      "price": 1500,
+      "bookTime": "2020-12-30T19:18:44.753Z",
+      "id": 32
+    },
+    {
+      "unitId": 2,
+      "bookDate": "2084",
+      "price": 6,
+      "bookTime": "2020-12-30T19:27:00.914Z",
+      "id": 33
+    },
+    {
+      "unitId": 1,
+      "bookDate": "2083",
+      "price": 1500,
+      "bookTime": "2020-12-30T19:27:49.029Z",
+      "id": 34
+    },
+    {
+      "unitId": 1,
+      "bookDate": "2084",
+      "price": 1500,
+      "bookTime": "2020-12-30T19:28:32.596Z",
+      "id": 35
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2084",
+      "price": 1500,
+      "bookTime": "2020-12-30T19:28:59.912Z",
+      "id": 36
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2083",
+      "price": 1500,
+      "bookTime": "2020-12-30T19:29:21.892Z",
+      "id": 37
+    },
+    {
+      "userId": 1,
+      "unitId": 1,
+      "bookDate": "2083",
+      "price": 1500,
+      "bookTime": "2020-12-30T20:03:17.066Z",
+      "id": 38
+    },
+    {
+      "unitId": 1,
+      "bookDate": "2084",
+      "price": 1500,
+      "bookTime": "2020-12-31T14:45:11.621Z",
+      "id": 39
+    },
+    {
+      "unitId": 1,
+      "bookDate": "2083",
+      "price": 1500,
+      "bookTime": "2020-12-31T15:43:31.438Z",
+      "id": 40
+    },
+    {
+      "unitId": 1,
+      "bookDate": "2084",
+      "price": 1500,
+      "bookTime": "2021-01-01T11:01:37.325Z",
+      "id": 41
+    },
+    {
+      "unitId": 1,
+      "bookDate": "2082",
+      "price": 1500,
+      "bookTime": "2021-01-01T14:25:15.593Z",
+      "id": 42
     }
   ]
 }
