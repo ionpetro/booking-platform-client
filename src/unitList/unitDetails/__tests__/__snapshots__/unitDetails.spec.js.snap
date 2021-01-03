@@ -8,7 +8,7 @@ exports[`UnitDetails when loaded handles fetch data error 1`] = `
     name="fade"
   >
     <v-message-stub
-      class="list__error"
+      class="details__error"
       type="error"
     >
       error

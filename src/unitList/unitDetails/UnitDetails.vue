@@ -1,7 +1,7 @@
 <template>
   <div class="details">
     <transition name="fade">
-      <v-message class="list__error" :type="'error'" v-if="message">{{ message }}</v-message>
+      <v-message class="details__error" :type="'error'" v-if="message">{{ message }}</v-message>
     </transition>
     <div v-if="loading" class="details__container">
       <beat-loader
@@ -70,7 +70,7 @@
       <div class="details--bottomSpacing"></div>
       <!-- Book Layout -->
       <div class="details__book">
-        <UnitBook :unit="unit"></UnitBook>
+        <UnitBook @onErrorMessage="bookingError" :unit="unit"></UnitBook>
       </div>
     </div>
   </div>

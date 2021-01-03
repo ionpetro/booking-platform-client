@@ -32,6 +32,9 @@ export default {
       } finally {
         this.loading = false;
       }
+    },
+    bookingError(error) {
+      this.message = error.message;
     }
   }
 };
