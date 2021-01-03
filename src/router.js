@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Login from './login/Login.vue';
 import UnitList from './unitList/UnitList.vue';
+import BookRef from './bookRef/BookRef.vue';
 import Home from './home/Home.vue';
 
 Vue.use(Router);
@@ -23,6 +24,11 @@ const router = new Router({
       path: '/units',
       name: 'units',
       component: UnitList
+    },
+    {
+      path: '/bookRef/:id',
+      name: 'bookRef',
+      component: BookRef
     }
   ]
 });
