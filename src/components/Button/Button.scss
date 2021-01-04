@@ -9,10 +9,11 @@
     }
   }
   &:disabled {
+    cursor: not-allowed;
     @if $color == $primary {
       background-color: $orange-light;
     } @else {
-      background-color: $blue-light;
+      background-color: $gray-medium;
     }
   }
   &:focus-visible {
@@ -35,6 +36,7 @@
 }
 
 .button {
+  cursor: pointer;
   color: white;
   font-weight: 500;
   padding: rem(16) rem(42);
@@ -44,6 +46,7 @@
   font-size: $base-font-size;
   border: none;
   display: flex;
+  align-items: center;
 }
 
 .primary {

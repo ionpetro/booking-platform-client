@@ -82,6 +82,10 @@
       color: $secondary;
       font-size: 1rem;
       margin-right: 8px;
+
+      &:focus {
+        outline: none;
+      }
     }
   }
 
