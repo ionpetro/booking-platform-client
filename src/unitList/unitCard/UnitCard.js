@@ -6,12 +6,12 @@ export default {
     }
   },
   /*
-    The @initialPrice is calculated by the unit's current price
-    plus the discount that was applied to that unit
+    The @hadDiscount returns true if the unit has a discount
+    and false if it doesn't.
   */
   computed: {
-    initialPrice() {
-      return this.unit.price + this.unit.price * this.unit.discount;
+    hasDiscount() {
+      return !(this.unit.price === this.unit.discountedPrice);
     }
   }
 };

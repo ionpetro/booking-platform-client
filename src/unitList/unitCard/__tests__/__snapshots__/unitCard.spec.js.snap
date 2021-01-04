@@ -22,13 +22,13 @@ exports[`UnitCard when loaded renders correctly 1`] = `
       <span
         class="body--small card__price__discount"
       >
-        2
+        1
       </span>
        
       <span
         class="body--large card__price__amount"
       >
-        1
+        
         
         <img
           alt="Bitcoin icon"

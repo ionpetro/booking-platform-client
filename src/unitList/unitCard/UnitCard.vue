@@ -5,11 +5,9 @@
     </div>
     <div class="card__info">
       <div class="card__price">
-        <span class="body--small card__price__discount" v-if="unit.discount">{{
-          initialPrice
-        }}</span>
+        <span class="body--small card__price__discount" v-if="hasDiscount">{{ unit.price }}</span>
         <span class="body--large card__price__amount"
-          >{{ unit.price }}
+          >{{ unit.discountedPrice }}
           <img src="@/assets/icons/Bitcoin.svg" alt="Bitcoin icon" />
         </span>
       </div>
