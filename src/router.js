@@ -29,7 +29,8 @@ const router = new Router({
     {
       path: '/bookRef/:id',
       name: 'bookRef',
-      component: BookRef
+      component: BookRef,
+      props: true
     }
   ]
 });
