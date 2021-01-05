@@ -30,12 +30,14 @@ server.use((req, res, next) => {
 
 router.render = (req, res) => {
   console.log(req.method, req.url);
-  if (req.method === 'GET' && req.url.startsWith('/units')) {
+  if (req.method === 'GET' && req.url.startsWith('/units?_page')) {
     res.jsonp({
       totalPages: 3,
       itemsCount: 48,
       units: res.locals.data
     });
+  } else if (req.method === 'GET' && req.url.startsWith('/units')) {
+    res.jsonp(res.locals.data);
   }
 };
 

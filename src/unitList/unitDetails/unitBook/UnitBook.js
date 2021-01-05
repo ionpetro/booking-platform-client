@@ -1,14 +1,14 @@
+import Button from '../../../components/Button/Button.vue';
+
 export default {
-  name: 'UnitCard',
+  components: {
+    'v-button': Button
+  },
   props: {
     unit: {
       required: true
     }
   },
-  /*
-    The @hadDiscount returns true if the unit has a discount
-    and false if it doesn't.
-  */
   computed: {
     hasDiscount() {
       return !(this.unit.price === this.unit.discountedPrice);

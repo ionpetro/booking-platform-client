@@ -1,0 +1,299 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UnitDetails when loaded handles fetch data error 1`] = `
+<div
+  class="details"
+>
+  <transition-stub
+    name="fade"
+  >
+    <v-message-stub
+      class="list__error"
+      type="error"
+    >
+      error
+    </v-message-stub>
+  </transition-stub>
+   
+  <!---->
+   
+  <!---->
+</div>
+`;
+
+exports[`UnitDetails when loaded renders data correctly 1`] = `
+<div
+  class="details"
+>
+  <transition-stub
+    name="fade"
+  >
+    <!---->
+  </transition-stub>
+   
+  <!---->
+   
+  <div>
+    <img
+      alt="unit image image"
+      class="details__img__container"
+      src="image"
+    />
+     
+    <h3>
+      name, 1
+    </h3>
+     
+    <div
+      class="details__characteristics"
+    >
+      <div>
+        <img
+          alt="Capsules"
+          src="@/assets/icons/Capsules.svg"
+        />
+        <span>
+           1
+        </span>
+      </div>
+       
+      <!---->
+       
+      <div>
+        <img
+          alt="Size"
+          src="@/assets/icons/Size.svg"
+        />
+         
+        <span>
+           1 mf
+        </span>
+      </div>
+       
+      <div>
+        <img
+          alt="Portals"
+          src="@/assets/icons/Portals.svg"
+        />
+         
+        <span>
+          1 portals
+        </span>
+      </div>
+    </div>
+     
+    <h5>
+      Amenities
+    </h5>
+     
+    <div
+      class="details__amenities"
+    >
+      <div
+        class="details__amenity"
+      >
+        <img
+          alt="Cleaning robot"
+          src=""
+        />
+         
+        <span>
+          Cleaning robot
+        </span>
+      </div>
+      <div
+        class="details__amenity"
+      >
+        <img
+          alt="Extremely fast Wi-Fi"
+          src=""
+        />
+         
+        <span>
+          Extremely fast Wi-Fi
+        </span>
+      </div>
+      <div
+        class="details__amenity"
+      >
+        <img
+          alt="Sterilizing equipment"
+          src=""
+        />
+         
+        <span>
+          Sterilizing equipment
+        </span>
+      </div>
+      <div
+        class="details__amenity"
+      >
+        <img
+          alt="Personal assistant"
+          src=""
+        />
+         
+        <span>
+          Personal assistant
+        </span>
+      </div>
+      <div
+        class="details__amenity"
+      >
+        <img
+          alt="Automatic heat"
+          src=""
+        />
+         
+        <span>
+          Automatic heat
+        </span>
+      </div>
+      <div
+        class="details__amenity"
+      >
+        <img
+          alt="Comfortable capsule"
+          src=""
+        />
+         
+        <span>
+          Comfortable capsule
+        </span>
+      </div>
+      <div
+        class="details__amenity"
+      >
+        <img
+          alt="Oxygen system"
+          src=""
+        />
+         
+        <span>
+          Oxygen system
+        </span>
+      </div>
+      <div
+        class="details__amenity"
+      >
+        <img
+          alt="Cooking robot"
+          src=""
+        />
+         
+        <span>
+          Cooking robot
+        </span>
+      </div>
+    </div>
+     
+    <h5>
+      Crater benefits
+    </h5>
+     
+    <div
+      class="details__benefits"
+    >
+      <div
+        class="details__benefit"
+      >
+        <img
+          alt="Automatic heating"
+          src=""
+        />
+         
+        <span
+          class="body--large"
+        >
+          Automatic heating
+        </span>
+      </div>
+      <div
+        class="details__benefit"
+      >
+        <img
+          alt="Fitness room"
+          src=""
+        />
+         
+        <span
+          class="body--large"
+        >
+          Fitness room
+        </span>
+      </div>
+      <div
+        class="details__benefit"
+      >
+        <img
+          alt="Private portal cabin"
+          src=""
+        />
+         
+        <span
+          class="body--large"
+        >
+          Private portal cabin
+        </span>
+      </div>
+      <div
+        class="details__benefit"
+      >
+        <img
+          alt="Internal pool"
+          src=""
+        />
+         
+        <span
+          class="body--large"
+        >
+          Internal pool
+        </span>
+      </div>
+      <div
+        class="details__benefit"
+      >
+        <img
+          alt="Pet friendly"
+          src=""
+        />
+         
+        <span
+          class="body--large"
+        >
+          Pet friendly
+        </span>
+      </div>
+    </div>
+     
+    <h5>
+      Crater
+    </h5>
+     
+    <div
+      class="details__crater"
+    >
+      <img
+        alt="Crater Image"
+        src="image"
+      />
+       
+      <p>
+        desc
+      </p>
+    </div>
+     
+    <div
+      class="details--bottomSpacing"
+    />
+     
+    <div
+      class="details__book"
+    >
+      <unitbook-stub
+        unit="[object Object]"
+      />
+    </div>
+  </div>
+</div>
+`;

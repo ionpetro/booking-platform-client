@@ -72,10 +72,11 @@
     padding-top: 10px;
   }
 
-  &__amenities {
+  &__characteristics {
     padding-top: 10px;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
 
     div {
       display: flex;

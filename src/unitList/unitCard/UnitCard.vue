@@ -5,11 +5,9 @@
     </div>
     <div class="card__info">
       <div class="card__price">
-        <span class="body--small card__price__discount" v-if="unit.discount">{{
-          initialPrice
-        }}</span>
+        <span class="body--small card__price__discount" v-if="hasDiscount">{{ unit.price }}</span>
         <span class="body--large card__price__amount"
-          >{{ unit.price }}
+          >{{ unit.discountedPrice }}
           <img src="@/assets/icons/Bitcoin.svg" alt="Bitcoin icon" />
         </span>
       </div>
@@ -17,7 +15,7 @@
         {{ unit.crater }}, {{ unit.address }}
         <span class="card__info__distance">• {{ unit.distance }}pt from center</span>
       </div>
-      <div class="card__amenities">
+      <div class="card__characteristics">
         <div v-if="unit.capsules">
           <img src="@/assets/icons/Capsules.svg" alt="Capsules" /><span> {{ unit.capsules }}</span>
         </div>
@@ -37,4 +35,4 @@
 
 <script src="./UnitCard.js"></script>
 
-<style lang="scss" src="./UnitCard.scss"></style>
+<style lang="scss" src="./UnitCard.scss" scoped></style>

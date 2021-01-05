@@ -1,0 +1,139 @@
+.details {
+  padding: 0 24px;
+  height: 100vh;
+  overflow-y: auto;
+
+  &__container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__loader {
+      display: block;
+    }
+  }
+
+  &__characteristics {
+    padding-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    div {
+      display: flex;
+      span {
+        padding: 4px 20px 4px 4px;
+      }
+    }
+  }
+
+  &__img__container {
+    margin-left: -24px;
+    width: 780px;
+    height: 340px;
+
+    @media #{$tablet} {
+      max-width: 100vw;
+      max-height: 100%;
+    }
+    @media #{$mobile} {
+      height: 200px;
+    }
+  }
+
+  h3 {
+    margin-top: 24px;
+  }
+
+  &__amenities {
+    margin-top: -24px; // override margin from flex
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &__amenity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      margin: 24px 8px 10px 0px;
+    }
+
+    @media #{$tablet} {
+      width: 33%;
+    }
+    @media #{$mobile} {
+      width: 50%;
+      img {
+        width: 156px;
+        height: 112px;
+      }
+    }
+    @media only screen and (max-width: 360px) {
+      width: 100%;
+    }
+  }
+  &__benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    div {
+      display: flex;
+      align-items: center;
+      width: 33%;
+      height: 50px;
+
+      @media #{$tablet} {
+        width: 50%;
+      }
+      @media #{$mobile} {
+        width: 100%;
+      }
+
+      img {
+        padding-right: 14px;
+      }
+    }
+  }
+
+  &__crater {
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &--bottomSpacing {
+    // space on the bottom to fit the book container
+    margin-top: 100px;
+  }
+
+  @media #{$mobile} {
+    padding: 0 16px;
+  }
+
+  &__book {
+    position: absolute;
+    // drawer width
+    width: 780px;
+    // full block according to container paddings
+    margin-left: -24px;
+    bottom: 0;
+    height: 80px;
+    background: #ffffff;
+    box-shadow: 0 -4px 15px rgba(159, 159, 159, 0.25);
+
+    @media only screen and (max-width: 780px) {
+      // adapt the block according to container paddings
+      width: 100%;
+    }
+
+    @media #{$mobile} {
+      margin-left: -16px;
+    }
+  }
+}
