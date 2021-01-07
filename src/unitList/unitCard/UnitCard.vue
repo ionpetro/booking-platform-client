@@ -19,9 +19,9 @@
         <div v-if="unit.capsules">
           <img src="@/assets/icons/Capsules.svg" alt="Capsules" /><span> {{ unit.capsules }}</span>
         </div>
-        <div v-if="unit.sterializers">
-          <img src="@/assets/icons/Sterializers.svg" alt="Sterializers" /><span>
-            {{ unit.sterializers }}</span
+        <div v-if="unit.sterilizers">
+          <img src="@/assets/icons/Sterilizers.svg" alt="sterilizers" /><span>
+            {{ unit.sterilizers }}</span
           >
         </div>
         <div v-if="unit.size">

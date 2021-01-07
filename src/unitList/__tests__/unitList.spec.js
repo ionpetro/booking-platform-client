@@ -2,25 +2,11 @@ import {shallowMount} from '@vue/test-utils';
 import flushPromises from 'flush-promises';
 import UnitList from '../UnitList.vue';
 import UnitService from '../unit.service';
+import UnitMock from '../unitDetails/__tests__/mocks/unit.mock';
 
 jest.mock('../unit.service', () => jest.fn());
 
-const mockData = [
-  {
-    id: 1,
-    image: 'image.jpg',
-    crater: 'Arcadia',
-    distance: 2,
-    facilities: {
-      capsules: 2,
-      sterializers: 1,
-      size: 1500
-    },
-    price: 1500,
-    address: 231,
-    discount: true
-  }
-];
+const mockData = [UnitMock];
 const mockResp = {units: mockData, totalPages: 4, itemsCount: 48};
 
 describe('UnitList', () => {

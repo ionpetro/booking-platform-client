@@ -57,7 +57,16 @@ exports[`UnitDetails when loaded renders data correctly 1`] = `
         </span>
       </div>
        
-      <!---->
+      <div>
+        <img
+          alt="sterilizers"
+          src="@/assets/icons/Sterilizers.svg"
+        />
+        <span>
+          
+          1
+        </span>
+      </div>
        
       <div>
         <img
