@@ -10,7 +10,12 @@
           <img src="@/assets/icons/Bitcoin.svg" alt="Bitcoin icon" />
         </span>
       </div>
-      <v-button class="btn" variant="secondary">Book</v-button>
+      <div class="book__form">
+        <UnitBookDate @onSelectedYear="yearSelected" :unit="unit"></UnitBookDate>
+        <v-button @click.native="bookUnit" :disabled="!selectedYear" class="btn" variant="secondary"
+          >Book</v-button
+        >
+      </div>
     </div>
   </div>
 </template>

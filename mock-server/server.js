@@ -38,6 +38,11 @@ router.render = (req, res) => {
     });
   } else if (req.method === 'GET' && req.url.startsWith('/units')) {
     res.jsonp(res.locals.data);
+  } else if (req.method === 'POST' && req.url.startsWith('/book')) {
+    res.jsonp({
+      bookId: 2,
+      bookDate: '1/1/2020'
+    });
   }
 };
 

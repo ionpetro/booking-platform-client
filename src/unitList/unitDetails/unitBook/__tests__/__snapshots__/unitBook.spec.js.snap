@@ -28,11 +28,21 @@ exports[`UnitBook when loaded renders data correctly 1`] = `
       </span>
     </div>
      
-    <button
-      class="btn button secondary"
+    <div
+      class="book__form"
     >
-      Book
-    </button>
+      <unitbookdate-stub
+        unit="[object Object]"
+      />
+       
+      <v-button-stub
+        class="btn"
+        disabled="true"
+        variant="secondary"
+      >
+        Book
+      </v-button-stub>
+    </div>
   </div>
 </div>
 `;

@@ -8,7 +8,7 @@ exports[`UnitDetails when loaded handles fetch data error 1`] = `
     name="fade"
   >
     <v-message-stub
-      class="list__error"
+      class="details__error"
       type="error"
     >
       error
@@ -57,7 +57,16 @@ exports[`UnitDetails when loaded renders data correctly 1`] = `
         </span>
       </div>
        
-      <!---->
+      <div>
+        <img
+          alt="sterilizers"
+          src="@/assets/icons/Sterilizers.svg"
+        />
+        <span>
+          
+          1
+        </span>
+      </div>
        
       <div>
         <img

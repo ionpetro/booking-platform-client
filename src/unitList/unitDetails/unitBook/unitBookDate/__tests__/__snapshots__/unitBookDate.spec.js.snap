@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UnitBookDate when loaded renders data correctly 1`] = `
+<div
+  class="bookDate"
+>
+  <div
+    class="bookDate__input"
+  >
+    <img
+      alt="Calendar"
+      class="bookDate__input__calendar"
+      src="@/assets/icons/Calendar.svg"
+    />
+     
+    <img
+      alt="Arrow"
+      class="testArrow bookDate__input__reverse"
+      src="@/assets/icons/Arrow.svg"
+    />
+     
+    <input
+      class="bookDate__input__text"
+      placeholder="yyyy"
+      readonly="readonly"
+    />
+     
+    <label
+      class="bookDate__label body--small"
+      for=""
+    >
+      Year
+    </label>
+  </div>
+   
+  <transition-stub
+    name="fade"
+  >
+    <!---->
+  </transition-stub>
+</div>
+`;
