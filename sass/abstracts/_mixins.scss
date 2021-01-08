@@ -1,1 +1,9 @@
 //Mixins
+@mixin center-tablet-absolute-elements {
+  @media #{$tablet} {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+}
