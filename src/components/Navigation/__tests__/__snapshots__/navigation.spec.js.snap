@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation when loaded renders correctly 1`] = `
+<nav
+  class="nav body--large"
+>
+  <img
+    alt="LogoBlue"
+    class="nav__logo"
+    src="@/assets/images/blue.png"
+  />
+   
+  <div
+    class="nav__icon"
+  >
+    <span
+      class="bar"
+    />
+     
+    <span
+      class="bar"
+    />
+     
+    <span
+      class="bar"
+    />
+  </div>
+   
+  <div
+    class="nav__links"
+  >
+    <div
+      class="nav__links__link nav__mobile nav__links__link--white"
+    >
+      <strong>
+        Hello, test
+      </strong>
+    </div>
+     
+    <div
+      class="nav__links__link"
+    >
+      <router-link-stub
+        to="/"
+      >
+        About
+      </router-link-stub>
+    </div>
+     
+    <div
+      class="nav__links__link"
+    >
+      <router-link-stub
+        to="/units"
+      >
+        Units
+      </router-link-stub>
+    </div>
+     
+    <hr
+      class="nav__mobile nav__links__line"
+    />
+     
+    <div
+      class="nav__links__link nav__mobile"
+    >
+      <a>
+        Log out
+      </a>
+    </div>
+  </div>
+   
+  <div
+    class="nav__login"
+  >
+    <div
+      class="nav__login__dropdown"
+    >
+      <div
+        class="nav__login__dropdown__title"
+      >
+        <span
+          class="nav__login__dropdown__title__name"
+          to="/units"
+        >
+          test
+        </span>
+         
+        <img
+          alt="arrow"
+          class="nav__login__dropdown__title__arrow__reset"
+          src="@/assets/icons/Dropdown.svg"
+        />
+      </div>
+       
+      <transition-stub
+        name="fade"
+      >
+        <!---->
+      </transition-stub>
+    </div>
+  </div>
+</nav>
+`;

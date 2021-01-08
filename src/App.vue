@@ -1,14 +1,27 @@
 <template>
   <div id="app">
     <transition name="fade">
-      <router-view />
+      <div>
+        <Navigation v-if="excludedRoute !== $route.name" />
+        <router-view />
+      </div>
     </transition>
   </div>
 </template>
 
 <script>
+import Navigation from './components/Navigation/Navigation.vue';
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Navigation
+  },
+  data() {
+    return {
+      excludedRoute: 'login'
+    };
+  }
 };
 </script>
 

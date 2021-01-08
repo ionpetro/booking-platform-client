@@ -3,7 +3,6 @@ import flushPromises from 'flush-promises';
 import Navigation from '../Navigation.vue';
 import AuthService from '../../../shared/services/auth.service';
 
-// import external functions
 import clickOutsideDirective from '../../../shared/helpers/directives/clickOutside';
 
 describe('Navigation', () => {
