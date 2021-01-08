@@ -57,7 +57,8 @@ export default {
       authService
         .login(this.user, this.remember)
         .then(() => {
-          this.$router.push('/units');
+          console.log(this.$route);
+          this.$router.push(this.$route.query.redirect || '/');
         })
         .catch(error => {
           this.loading = false;

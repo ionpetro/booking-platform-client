@@ -28,6 +28,9 @@ export default {
   },
   mounted() {
     this.fetch();
+    if (this.$route.params.id) {
+      this.openDrawer(this.$route.params.id);
+    }
   },
   methods: {
     async fetch() {

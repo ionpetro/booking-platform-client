@@ -6,14 +6,14 @@ import AuthService from '../../shared/services/auth.service';
 
 describe('Login', () => {
   let wrapper;
-  const $router = {push: jest.fn()};
+  const $route = {query: {redirect: '/units'}};
 
   const loginMock = jest.fn();
   AuthService.prototype.login = loginMock;
 
   beforeEach(() => {
     wrapper = mount(Login, {
-      mocks: {$router}
+      mocks: {$route}
     });
   });
 
@@ -51,18 +51,24 @@ describe('Login', () => {
       assertErrorMessage('Please correct your username');
     });
 
-    it('hits login API with correct credentials and redirects to home page', async () => {
+    it('hits login API with correct credentials and redirects to units page', async () => {
       const mockedUser = {
         username: 'test@1234.co',
         password: 'test'
       };
-      const resp = {data: {...mockedUser, accessToken: 'token', refreshToken: 'token'}};
+      const resp = {
+        data: {
+          ...mockedUser,
+          accessToken: 'token',
+          refreshToken: 'token'
+        }
+      };
       loginMock.mockResolvedValue(Promise.resolve(resp));
       await fillLoginFieldAndSubmit('test@1234.co', 'test');
       await wrapper.find('form').trigger('submit.prevent');
       expect(wrapper.vm.loading).toBe(true);
       await flushPromises();
-      expect($router.push).toHaveBeenCalledWith('/units');
+      expect(wrapper.vm.$route.query.redirect).toEqual('/units');
     });
 
     it('shows error when API throws error', async () => {
