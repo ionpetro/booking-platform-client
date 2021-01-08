@@ -1,6 +1,5 @@
 <template>
   <div>
-    <a href @click.prevent="logOut">Logout</a>
     <transition name="fade">
       <v-message class="list__error" :type="'error'" v-if="message">{{ message }}</v-message>
     </transition>
