@@ -5,32 +5,15 @@ import VueCookies from 'vue-cookies';
 import App from './App.vue';
 import router from './router';
 
-// import interceptors
 import interceptorsSetup from './shared/helpers/interceptors';
+import globalDirectivesHandler from './shared/helpers/directives/globalDirectivesHandler';
 
 interceptorsSetup();
+globalDirectivesHandler();
 
 Vue.use(VueCookies);
 Vue.use(VueSpinners);
 Vue.use(VueObserveVisibility);
-
-Vue.directive('click-outside', {
-  bind: (el, binding, vnode) => {
-    const customEl = el;
-    customEl.clickOutsideEvent = event => {
-      // here I check that click was outside the el and his children
-      if (!(el === event.target || el.contains(event.target))) {
-        // and if it did, call method provided in attribute value
-        const vnodeCustom = vnode;
-        vnodeCustom.context[binding.expression](event);
-      }
-    };
-    document.body.addEventListener('click', el.clickOutsideEvent);
-  },
-  unbind: el => {
-    document.body.removeEventListener('click', el.clickOutsideEvent);
-  }
-});
 
 Vue.config.productionTip = false;
 

@@ -3,6 +3,7 @@ import flushPromises from 'flush-promises';
 import UnitList from '../UnitList.vue';
 import UnitService from '../unit.service';
 import UnitMock from '../unitDetails/__tests__/mocks/unit.mock';
+import UnitCard from '../unitCard/UnitCard.vue';
 
 jest.mock('../unit.service', () => jest.fn());
 
@@ -52,6 +53,16 @@ describe('UnitList', () => {
       expect(wrapper.vm.$data.totalPages).toEqual(1);
       expect(wrapper.vm.$data.units).toEqual([]);
       expect(wrapper.vm.$data.loading).toBeFalsy();
+    });
+
+    it('opens drawer on unit click', async () => {
+      UnitService.prototype.getUnits = jest.fn(() => Promise.resolve(mockResp));
+      wrapper = shallowMount(UnitList);
+      await flushPromises();
+
+      await wrapper.findComponent(UnitCard).trigger('click');
+
+      expect(wrapper.vm.$data.isDrawerOpened).toBeTruthy();
     });
   });
 });

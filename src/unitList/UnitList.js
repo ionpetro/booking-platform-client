@@ -1,11 +1,9 @@
-import AuthService from '../shared/services/auth.service';
 import Drawer from '../components/Drawer/Drawer.vue';
 import Message from '../components/Message/Message.vue';
 import UnitCard from './unitCard/UnitCard.vue';
 import UnitDetails from './unitDetails/UnitDetails.vue';
 import UnitService from './unit.service';
 
-const authService = new AuthService();
 const unitService = new UnitService();
 
 export default {
@@ -50,10 +48,6 @@ export default {
       }
       this.page += 1;
       this.fetch();
-    },
-    logOut() {
-      authService.logout();
-      this.$router.push('/login');
     },
     openDrawer(id) {
       this.isDrawerOpened = true;

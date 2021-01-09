@@ -1,0 +1,186 @@
+.nav {
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: box-shadow 0.1s ease-in;
+
+  &__scrolled {
+    box-shadow: 0 6px 8px -6px $gray-tint;
+  }
+
+  a {
+    color: $black;
+    text-decoration: none;
+    @media #{$mobile} {
+      color: $white;
+    }
+  }
+
+  &__logo {
+    width: 116px;
+    height: 20px;
+    @media #{$mobile} {
+      width: 86px;
+      height: 15px;
+    }
+  }
+
+  &__mobile {
+    display: none;
+
+    @media #{$mobile} {
+      display: block;
+    }
+  }
+
+  &__icon {
+    display: none;
+
+    .bar {
+      transition: all 0.3s ease-in-out;
+      width: 16px;
+      border: 1.2px solid $secondary;
+      border-radius: 10px;
+      background-color: $secondary;
+    }
+
+    .bar:nth-child(2) {
+      margin: 4px auto;
+    }
+
+    @media #{$mobile} {
+      display: grid;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    &__link {
+      margin: 0 20px;
+
+      &--white {
+        @media #{$mobile} {
+          color: $white;
+        }
+      }
+
+      @media #{$mobile} {
+        padding: 20px;
+      }
+    }
+
+    &__line {
+      @media #{$mobile} {
+        margin-top: 100px;
+        color: $white;
+        background-color: $white;
+        width: 30%;
+      }
+    }
+
+    @media #{$mobile} {
+      z-index: 100;
+      flex-direction: column;
+      position: fixed;
+      justify-content: center;
+      top: 55px;
+      background-color: $secondary;
+      width: 100%;
+      height: calc(100vh - 55px);
+      transform: translate(calc(-100% - 16px));
+      transition: transform 0.7s ease-in-out;
+      text-align: center;
+      overflow: hidden;
+    }
+  }
+
+  &__mobile-nav {
+    @media #{$mobile} {
+      transform: translate(calc(0% - 16px));
+    }
+  }
+
+  &__login {
+    &__dropdown {
+      &__title {
+        cursor: pointer;
+        display: flex;
+        &__name {
+          padding-right: 4px;
+        }
+
+        &__arrow {
+          &__reverse {
+            transition: transform 0.3s ease-in-out;
+            transform: rotate(180deg);
+          }
+
+          &__reset {
+            transition: transform 0.3s ease-in-out;
+            transform: rotate(0deg);
+          }
+        }
+      }
+
+      &__body {
+        position: absolute;
+        width: 130px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        height: 48px;
+        top: 48px + 10px;
+        right: 30px;
+        background-color: $secondary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+          span {
+            text-decoration: underline;
+          }
+        }
+
+        span {
+          padding-left: 10px;
+          color: $white;
+        }
+      }
+    }
+    @media #{$mobile} {
+      display: none;
+    }
+  }
+
+  &__icon.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  &__icon.active .bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  &__icon.active .bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  @media #{$mobile} {
+    padding: 22px 16px;
+    background-color: $white;
+    margin: 0;
+  }
+}
+
+// class for active routes
+.is-active {
+  font-weight: 700;
+}

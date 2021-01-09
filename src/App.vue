@@ -1,25 +1,14 @@
 <template>
   <div id="app">
     <transition name="fade">
-      <router-view />
+      <div>
+        <Navigation v-if="!hideNavigation($route.name)" />
+        <router-view />
+      </div>
     </transition>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'App'
-};
-</script>
+<script src="./App.js"></script>
 
-<style>
-.fade-enter-active,
-.face-leave-active {
-  transition: opacity 2s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>
+<style lang="scss" src="./App.scss"></style>
