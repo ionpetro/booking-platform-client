@@ -4,6 +4,7 @@
       <div>
         <Navigation v-if="!hideNavigation($route.name)" />
         <router-view />
+        <Footer v-if="!hideFooter($route.name)"></Footer>
       </div>
     </transition>
   </div>
