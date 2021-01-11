@@ -16,6 +16,7 @@
     "gsap": "^3.5.1",
     "json-server": "^0.16.3",
     "three": "^0.124.0",
+    "v-lazy-image": "^1.4.0",
     "vue": "^2.6.11",
     "vue-cookies": "^1.7.4",
     "vue-observe-visibility": "^0.4.6",

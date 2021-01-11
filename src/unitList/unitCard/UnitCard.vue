@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card__image card__image--zoom">
-      <img :src="unit.image" alt="Unit Image" />
+      <v-lazy-image :src="unit.image" src-placeholder="/static/Grey.png"></v-lazy-image>
     </div>
     <div class="card__info">
       <div class="card__price">

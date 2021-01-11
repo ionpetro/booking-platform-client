@@ -8,8 +8,8 @@ exports[`UnitCard when loaded renders correctly 1`] = `
     class="card__image card__image--zoom"
   >
     <img
-      alt="Unit Image"
-      src="image"
+      class="v-lazy-image"
+      src="/static/Grey.png"
     />
   </div>
    

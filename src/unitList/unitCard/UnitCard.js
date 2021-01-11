@@ -1,5 +1,10 @@
+import VLazyImage from 'v-lazy-image';
+
 export default {
   name: 'UnitCard',
+  components: {
+    VLazyImage
+  },
   props: {
     unit: {
       required: true
