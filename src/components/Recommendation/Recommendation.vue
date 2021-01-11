@@ -4,12 +4,12 @@
       <div class="recommendation__features__trancate--top"></div>
       <div class="recommendation__features__trancate--bot"></div>
       <div class="recommendation__features__feature p1">
-        <span>🥂 Definately lyxurious</span>
+        <span>🥂 Definitely luxurious</span>
       </div>
-      <div class="recommendation__features__feature p2"><span>🥰 Something cozy</span></div>
-      <div class="recommendation__features__feature p3"><span>👕 Big wardrobes</span></div>
+      <div class="recommendation__features__feature p2"><span>📡 Fast connections </span></div>
+      <div class="recommendation__features__feature p3"><span>🪐 Stunning view</span></div>
       <div class="recommendation__features__feature p4">
-        <span>🛋️ Bright living room</span>
+        <span>👽 Extra alien security</span>
       </div>
     </div>
     <div class="recommendation__unit">
