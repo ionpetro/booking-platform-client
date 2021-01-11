@@ -197,6 +197,23 @@ exports[`UnitDetails when loaded renders data correctly 1`] = `
     </div>
      
     <h5>
+      Crater
+    </h5>
+     
+    <div
+      class="details__crater"
+    >
+      <img
+        alt="Crater Image"
+        src="image"
+      />
+       
+      <p>
+        desc
+      </p>
+    </div>
+     
+    <h5>
       Crater benefits
     </h5>
      
@@ -273,23 +290,6 @@ exports[`UnitDetails when loaded renders data correctly 1`] = `
           Pet friendly
         </span>
       </div>
-    </div>
-     
-    <h5>
-      Crater
-    </h5>
-     
-    <div
-      class="details__crater"
-    >
-      <img
-        alt="Crater Image"
-        src="image"
-      />
-       
-      <p>
-        desc
-      </p>
     </div>
      
     <div

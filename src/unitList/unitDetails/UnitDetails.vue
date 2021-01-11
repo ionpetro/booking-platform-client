@@ -47,6 +47,13 @@
         </div>
       </div>
       <div v-else>No amenities</div>
+      <!-- Crater Description -->
+      <h5>Crater</h5>
+      <div v-if="unit.imageCrater" class="details__crater">
+        <img :src="unit.imageCrater" alt="Crater Image" />
+        <p>{{ unit.descriptionCrater }}</p>
+      </div>
+      <div v-else>No crater details</div>
       <!-- Benefits -->
       <h5>Crater benefits</h5>
       <div v-if="unit.benefits" class="details__benefits">
@@ -60,13 +67,6 @@
         </div>
       </div>
       <div v-else>No crater benefits</div>
-      <!-- Crater Description -->
-      <h5>Crater</h5>
-      <div v-if="unit.imageCrater" class="details__crater">
-        <img :src="unit.imageCrater" alt="Crater Image" />
-        <p>{{ unit.descriptionCrater }}</p>
-      </div>
-      <div v-else>No crater details</div>
       <div class="details--bottomSpacing"></div>
       <!-- Book Layout -->
       <div class="details__book">
