@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recommendation when loaded renders correctly 1`] = `
+<div
+  class="recommendation"
+>
+  <div
+    class="recommendation__features tablet__hide"
+  >
+    <div
+      class="recommendation__features__trancate--top"
+    />
+     
+    <div
+      class="recommendation__features__trancate--bot"
+    />
+     
+    <div
+      class="recommendation__features__feature p1"
+    >
+      <span>
+        🥂 Definately lyxurious
+      </span>
+    </div>
+     
+    <div
+      class="recommendation__features__feature p2"
+    >
+      <span>
+        🥰 Something cozy
+      </span>
+    </div>
+     
+    <div
+      class="recommendation__features__feature p3"
+    >
+      <span>
+        👕 Big wardrobes
+      </span>
+    </div>
+     
+    <div
+      class="recommendation__features__feature p4"
+    >
+      <span>
+        🛋️ Bright living room
+      </span>
+    </div>
+  </div>
+   
+  <div
+    class="recommendation__unit"
+  >
+    <div
+      class="recommendation__unit__loader"
+    >
+      <!---->
+    </div>
+     
+    <transition-stub
+      name="fade"
+    >
+      <div
+        class="recommendation__unit__desc"
+      >
+        <img
+          alt="Recommendation Unit"
+          class="recommendation__unit__desc__img"
+          src="@/assets/images/RecommendationUnit.png"
+        />
+         
+        <h1
+          class="recommendation__unit__desc__h1"
+        >
+          Your perfect match!
+        </h1>
+         
+        <p
+          class="recommendation__unit__desc__p"
+        >
+          
+          After analyzing your thoughts and emotions, we found your ideal apartment!
+          
+          <br
+            class="break"
+          />
+          
+          Bright, luxurius with wide areas to invite your colleagues and friends.
+        
+        </p>
+         
+        <button
+          class="recommendation__unit__desc__button button secondary"
+        >
+          View this unit
+        </button>
+      </div>
+    </transition-stub>
+  </div>
+</div>
+`;

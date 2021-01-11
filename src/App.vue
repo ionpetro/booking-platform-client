@@ -3,7 +3,11 @@
     <transition name="fade">
       <div>
         <Navigation v-if="!hideNavigation($route.name)" />
-        <router-view />
+        <!-- Remember the state of home page component, so as to
+        not animate recommendation component multiple times -->
+        <keep-alive include="home">
+          <router-view />
+        </keep-alive>
         <Footer v-if="!hideFooter($route.name)"></Footer>
       </div>
     </transition>

@@ -1,0 +1,127 @@
+$full-height: calc(100vh - 71px);
+
+.home {
+  overflow-x: hidden;
+
+  &__recommendation {
+    height: $full-height;
+    display: flex;
+    align-items: center;
+  }
+
+  &__main {
+    height: $full-height;
+    width: 100%;
+    display: flex;
+    overflow-x: hidden;
+    justify-content: space-between;
+    align-items: center;
+
+    &__intro {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &__title {
+        font-weight: 500;
+        font-size: 72px;
+        line-height: 100px;
+
+        @media only screen and (max-width: 1480px) {
+          font-size: 60px;
+          line-height: 60px;
+        }
+
+        @media #{$tablet} {
+          font-size: 50px;
+          letter-spacing: -0.005em;
+        }
+
+        @media #{$mobile} {
+          font-size: 24px;
+          line-height: 36px;
+        }
+      }
+      &__button {
+        margin-top: 46px;
+        @media #{$mobile} {
+          font-size: 12px;
+        }
+      }
+    }
+
+    &__image {
+      float: right;
+      max-height: 1300px;
+      height: $full-height;
+
+      @media only screen and (max-width: 1480px) {
+        margin-right: -200px;
+      }
+
+      @media #{$tablet} {
+        min-height: 700px;
+        height: 80vh;
+        margin-right: -400px;
+      }
+
+      @media #{$mobile} {
+        height: 60vh;
+        max-height: 400px;
+        min-height: auto;
+        margin-right: -200px;
+      }
+    }
+
+    // TODO test with Marietta if 1680px works on her laptop
+
+    @media only screen and (max-width: 1480px) {
+      margin-left: 30px;
+    }
+
+    @media #{$tablet} {
+      margin-left: 16px;
+    }
+
+    @media #{$mobile} {
+      justify-content: flex-start;
+    }
+  }
+
+  &__partnerships {
+    text-align: center;
+
+    &__h1 {
+      @media #{$tablet} {
+        font-size: 24px;
+      }
+      @media #{$mobile} {
+        margin-bottom: 40px;
+      }
+    }
+
+    &__images {
+      display: flex;
+      justify-content: center;
+
+      &__image {
+        margin: 0 40px;
+
+        @media #{$tablet} {
+          margin: auto;
+          width: 130px;
+        }
+      }
+      &__nasa {
+        @media #{$tablet} {
+          width: 70px;
+        }
+      }
+
+      @media #{$mobile} {
+        flex-direction: column;
+      }
+    }
+  }
+}

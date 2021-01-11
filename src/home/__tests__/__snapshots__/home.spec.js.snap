@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home when loaded renders correctly 1`] = `
+<div
+  class="home"
+>
+  <!---->
+   
+  <section
+    class="home__main"
+  >
+    <div
+      class="home__main__intro"
+    >
+      <div>
+        <div
+          class="home__main__intro__title animateIntro"
+        >
+          
+          We are giving you 
+          <br />
+          
+          the space you need
+        
+        </div>
+         
+        <v-button-stub
+          class="home__main__intro__button animateIntro"
+          variant="secondary"
+        >
+          Explore apartments
+        </v-button-stub>
+      </div>
+    </div>
+     
+    <div>
+      <img
+        alt="Units"
+        class="home__main__image"
+        src="@/assets/images/Units.png"
+      />
+    </div>
+  </section>
+   
+  <section
+    class="home__partnerships"
+  >
+    <h1
+      class="home__partnerships__h1"
+    >
+      Partnerships
+    </h1>
+     
+    <div
+      class="home__partnerships__images"
+    >
+      <img
+        alt="Nasa"
+        class="home__partnerships__images__image home__partnerships__images__nasa"
+        src="@/assets/images/Nasa.png"
+      />
+       
+      <img
+        alt="SpaceX"
+        class="home__partnerships__images__image"
+        src="@/assets/images/SpaceX.png"
+      />
+       
+      <img
+        alt="Eesa"
+        class="home__partnerships__images__image"
+        src="@/assets/images/Eesa.png"
+      />
+       
+      <img
+        alt="ArianeGroup"
+        class="home__partnerships__images__image"
+        src="@/assets/images/ArianeGroup.png"
+      />
+    </div>
+  </section>
+</div>
+`;

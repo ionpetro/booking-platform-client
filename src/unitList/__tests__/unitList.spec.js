@@ -12,6 +12,8 @@ const mockResp = {units: mockData, totalPages: 4, itemsCount: 48};
 
 describe('UnitList', () => {
   let wrapper;
+  // no route id was given
+  const $route = {params: {id: undefined}};
 
   beforeEach(() => {
     UnitService.mockClear();
@@ -23,7 +25,9 @@ describe('UnitList', () => {
 
   describe('when loaded', () => {
     it('renders correctly', () => {
-      wrapper = shallowMount(UnitList);
+      wrapper = shallowMount(UnitList, {
+        mocks: {$route}
+      });
       expect(wrapper.element).toMatchSnapshot();
     });
   });
@@ -31,8 +35,9 @@ describe('UnitList', () => {
   describe('when component is mounted', () => {
     it('fetches data correctly', async () => {
       UnitService.prototype.getUnits = jest.fn(() => Promise.resolve(mockResp));
-
-      wrapper = shallowMount(UnitList);
+      wrapper = shallowMount(UnitList, {
+        mocks: {$route}
+      });
 
       await flushPromises();
 
@@ -44,8 +49,9 @@ describe('UnitList', () => {
 
     it('handles fetch data error', async () => {
       UnitService.prototype.getUnits = jest.fn(() => Promise.reject(new Error('error')));
-
-      wrapper = shallowMount(UnitList);
+      wrapper = shallowMount(UnitList, {
+        mocks: {$route}
+      });
 
       await flushPromises();
 
@@ -57,7 +63,10 @@ describe('UnitList', () => {
 
     it('opens drawer on unit click', async () => {
       UnitService.prototype.getUnits = jest.fn(() => Promise.resolve(mockResp));
-      wrapper = shallowMount(UnitList);
+      wrapper = shallowMount(UnitList, {
+        mocks: {$route}
+      });
+
       await flushPromises();
 
       await wrapper.findComponent(UnitCard).trigger('click');
