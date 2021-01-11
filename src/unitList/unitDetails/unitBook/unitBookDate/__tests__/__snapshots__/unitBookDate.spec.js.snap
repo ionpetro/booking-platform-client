@@ -21,7 +21,7 @@ exports[`UnitBookDate when loaded renders data correctly 1`] = `
      
     <input
       class="bookDate__input__text"
-      placeholder="yyyy"
+      placeholder="YYYY"
       readonly="readonly"
     />
      
