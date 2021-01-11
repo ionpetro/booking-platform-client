@@ -8,7 +8,6 @@
         <keep-alive include="home">
           <router-view />
         </keep-alive>
-        <Footer v-if="!hideFooter($route.name)"></Footer>
       </div>
     </transition>
   </div>

@@ -79,5 +79,7 @@ exports[`Home when loaded renders correctly 1`] = `
       />
     </div>
   </section>
+   
+  <footer-stub />
 </div>
 `;
