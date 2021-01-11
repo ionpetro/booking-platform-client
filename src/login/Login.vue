@@ -19,7 +19,7 @@
             <v-input
               class="username"
               name="username"
-              labelName="Username"
+              labelName="User"
               type="text"
               :errors="errors.username"
               placeholder="ex. joe@2020.co"

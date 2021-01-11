@@ -72,7 +72,7 @@ exports[`Login when loaded renders correctly 1`] = `
               class="label__text label__text"
               for="name"
             >
-              Username
+              User
             </label>
              
             <!---->
