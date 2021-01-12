@@ -79,7 +79,7 @@ exports[`Recommendation when loaded renders correctly 1`] = `
           class="recommendation__unit__desc__p"
         >
           
-          After analyzing your thoughts and emotions, we found your ideal apartment!
+          After analyzing your thoughts and emotions, we found your ideal unit!
           
           <br
             class="break"

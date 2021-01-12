@@ -25,7 +25,7 @@
           />
           <h1 class="recommendation__unit__desc__h1">Your perfect match!</h1>
           <p class="recommendation__unit__desc__p">
-            After analyzing your thoughts and emotions, we found your ideal apartment!
+            After analyzing your thoughts and emotions, we found your ideal unit!
             <br class="break" />
             Bright, luxurius with wide areas to invite your colleagues and friends.
           </p>
