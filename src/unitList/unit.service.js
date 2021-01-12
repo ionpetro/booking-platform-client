@@ -25,7 +25,7 @@ export default class UnitService {
         if (err.response && err.response.status === 409) {
           const price = err.response.data.price;
           throw new Error(`The price ${price} is outdated. Please try again later`);
-        } else if (err.response && err.response.status === 410) {
+        } else if (err.response && err.response.status === 422) {
           const year = err.response.data.bookDate;
           throw new Error(`On ${year} the unit is booked. Please try another one`);
         }
