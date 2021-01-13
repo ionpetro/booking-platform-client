@@ -7,6 +7,8 @@
     "no-underscore-dangle": "off",
     "class-methods-use-this": "off",
     "prefer-destructuring": "off",
+    "no-param-reassign": "warn",
+    "no-unused-expressions": ["warn", {"allowShortCircuit": true, "allowTernary": true}],
     "import/no-extraneous-dependencies": [
       "error",
       {"devDependencies": ["**/__tests__/**", "fixtures/**", "db/**", "scripts/**"]}

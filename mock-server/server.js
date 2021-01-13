@@ -41,7 +41,10 @@ router.render = (req, res) => {
   } else if (req.method === 'POST' && req.url.startsWith('/book')) {
     res.jsonp({
       bookId: 2,
-      bookDate: '1/1/2020'
+      bookDate: '1/1/2020',
+      crater: 'Arcadia',
+      craterDescription:
+        'Arcadia is one of the most magnificent crates in Mars. It is full of green parks that aim to sustain your work - life balance.The apartment is located near the central park and only few plots away from the fitness room.'
     });
   }
 };
