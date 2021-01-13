@@ -1,0 +1,39 @@
+steps:
+  
+  # Build web image based on Dockerfile
+- name: 'gcr.io/cloud-builders/docker'
+  id: 'build-web-image'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/web:$SHORT_SHA', '.']
+  
+  # Push web image on GCR
+- name: 'gcr.io/cloud-builders/docker'
+  id: 'push-web-image'
+  waitFor: ['build-web-image']
+  args: ['push', 'gcr.io/$PROJECT_ID/web:$SHORT_SHA']
+
+  # Convert docker-compose to K8s deployments
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: 'update-web-image'
+  entrypoint: 'sh'
+  waitFor: ['push-web-image']
+  args:
+    - -ceux
+    - |
+      web_image_name="gcr.io\/$PROJECT_ID\/web:$SHORT_SHA"
+      sed -i "s/web:latest/$web_image_name/g" k8s/web-deployment.yaml
+
+  # Deploy K8s  
+- name: 'gcr.io/cloud-builders/gke-deploy'
+  id: 'apply-deploy'
+  waitFor: ['update-web-image']
+  args:
+  - 'apply'
+  - '-f=k8s'
+  - '--namespace=$_K8S_NAMESPACE'
+  - '--cluster=$_GKE_CLUSTER'
+  - '--location=$_GKE_LOCATION'
+
+substitutions:
+  _GKE_CLUSTER:
+  _GKE_LOCATION:
+  _K8S_NAMESPACE:
