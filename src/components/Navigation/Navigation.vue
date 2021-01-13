@@ -11,7 +11,7 @@
         <strong>Hello, {{ user.firstName }}</strong>
       </div>
       <div class="nav__links__link">
-        <router-link @click.native="toggleMobileNav" to="/">About</router-link>
+        <router-link @click.native="toggleMobileNav" to="/">Home</router-link>
       </div>
       <div class="nav__links__link">
         <router-link @click.native="toggleMobileNav" to="/units">Units</router-link>
