@@ -53,6 +53,7 @@ export default {
       if (this.checkForm()) {
         return;
       }
+
       this.loading = true;
       authService
         .login(this.user, this.remember)

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: web
+  name: web-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - args:
+            - http-server
+            - dist
+          image: web:latest
+          name: web
+          ports:
+            - containerPort: 8080
+      restartPolicy: Always
