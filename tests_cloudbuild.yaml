@@ -4,7 +4,7 @@ steps:
 - id: deps_install
   name: node
   entrypoint: npm
-  args: ["install"]
+  args: ["ci"]
 
   # Run tests
 - id: frontend_tests
