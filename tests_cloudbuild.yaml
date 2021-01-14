@@ -1,0 +1,13 @@
+steps:
+  
+  # Install dependencies
+- id: deps_install
+  name: node
+  entrypoint: npm
+  args: ["install"]
+
+  # Run tests
+- id: frontend_tests
+  name: node
+  entrypoint: npm
+  args: ['run', 'test']
