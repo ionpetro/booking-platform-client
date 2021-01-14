@@ -23,7 +23,6 @@
   }
 
   &__characteristics {
-    padding-top: 10px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -52,6 +51,11 @@
 
   h3 {
     margin-top: 24px;
+  }
+
+  h5 {
+    margin-top: 32px;
+    margin-bottom: 24px;
   }
 
   &__amenities {
@@ -85,6 +89,7 @@
     }
   }
   &__benefits {
+    margin-top: -5px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;

@@ -9,16 +9,12 @@ export default {
   },
   data() {
     return {
-      disabledNavigationRoutes: ['login'],
-      disabledFooterRoutes: ['login', 'bookRef']
+      disabledNavigationRoutes: ['login']
     };
   },
   methods: {
     hideNavigation(routeName) {
       return this.disabledNavigationRoutes.includes(routeName);
-    },
-    hideFooter(routeName) {
-      return this.disabledFooterRoutes.includes(routeName);
     }
   }
 };

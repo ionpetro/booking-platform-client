@@ -18,7 +18,7 @@ Vue.use(VueObserveVisibility);
 Vue.config.productionTip = false;
 
 // set secure, only https works
-Vue.$cookies.config('', '', '', true);
+Vue.$cookies.config('', '', '', false);
 
 new Vue({
   router,

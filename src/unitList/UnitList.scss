@@ -1,6 +1,6 @@
 .list {
   margin: auto;
-  margin-top: 180px;
+  margin-top: 116px;
   width: 1744px;
   display: flex;
   flex-wrap: wrap;
@@ -16,6 +16,7 @@
 
   &__card {
     margin: auto;
+    outline: none;
   }
 
   @media only screen and (max-width: 1919px) {

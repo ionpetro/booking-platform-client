@@ -1,12 +1,14 @@
 import {gsap} from 'gsap';
 import Button from '../components/Button/Button.vue';
 import Recommendation from '../components/Recommendation/Recommendation.vue';
+import Footer from '../components/Footer/Footer.vue';
 
 export default {
   name: 'home',
   components: {
     'v-recommendation': Recommendation,
-    'v-button': Button
+    'v-button': Button,
+    Footer
   },
   data() {
     return {

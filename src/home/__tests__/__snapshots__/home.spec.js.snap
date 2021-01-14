@@ -28,7 +28,7 @@ exports[`Home when loaded renders correctly 1`] = `
           class="home__main__intro__button animateIntro"
           variant="secondary"
         >
-          Explore apartments
+          Explore units
         </v-button-stub>
       </div>
     </div>
@@ -79,5 +79,7 @@ exports[`Home when loaded renders correctly 1`] = `
       />
     </div>
   </section>
+   
+  <footer-stub />
 </div>
 `;

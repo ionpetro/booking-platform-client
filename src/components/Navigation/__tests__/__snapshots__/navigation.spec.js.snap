@@ -43,7 +43,7 @@ exports[`Navigation when loaded renders correctly 1`] = `
       <router-link-stub
         to="/"
       >
-        About
+        Home
       </router-link-stub>
     </div>
      

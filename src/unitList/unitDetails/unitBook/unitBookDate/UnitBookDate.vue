@@ -11,7 +11,7 @@
       <input
         class="bookDate__input__text"
         :value="selectedYear"
-        placeholder="yyyy"
+        placeholder="YYYY"
         @click.prevent="toggleModal"
         readonly
       />

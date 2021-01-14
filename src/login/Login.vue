@@ -19,7 +19,7 @@
             <v-input
               class="username"
               name="username"
-              labelName="Username"
+              labelName="User"
               type="text"
               :errors="errors.username"
               placeholder="ex. joe@2020.co"
@@ -66,7 +66,7 @@
               <span class="checkbox__text">Remember me</span>
             </label>
           </div>
-          <v-button class="btn button--margin" variant="primary"
+          <v-button class="btn button--margin" variant="secondary"
             ><span v-if="!loading">Login</span>
             <span>
               <beat-loader v-if="loading" color="white" :size="10" sizeUnit="px"></beat-loader>

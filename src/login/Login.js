@@ -58,7 +58,6 @@ export default {
       authService
         .login(this.user, this.remember)
         .then(() => {
-          console.log(this.$route);
           this.$router.push(this.$route.query.redirect || '/');
         })
         .catch(error => {

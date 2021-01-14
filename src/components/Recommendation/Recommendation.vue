@@ -4,12 +4,12 @@
       <div class="recommendation__features__trancate--top"></div>
       <div class="recommendation__features__trancate--bot"></div>
       <div class="recommendation__features__feature p1">
-        <span>🥂 Definately lyxurious</span>
+        <span>🥂 Definitely luxurious</span>
       </div>
-      <div class="recommendation__features__feature p2"><span>🥰 Something cozy</span></div>
-      <div class="recommendation__features__feature p3"><span>👕 Big wardrobes</span></div>
+      <div class="recommendation__features__feature p2"><span>📡 Fast connections </span></div>
+      <div class="recommendation__features__feature p3"><span>🪐 Stunning view</span></div>
       <div class="recommendation__features__feature p4">
-        <span>🛋️ Bright living room</span>
+        <span>👽 Extra alien security</span>
       </div>
     </div>
     <div class="recommendation__unit">
@@ -25,7 +25,7 @@
           />
           <h1 class="recommendation__unit__desc__h1">Your perfect match!</h1>
           <p class="recommendation__unit__desc__p">
-            After analyzing your thoughts and emotions, we found your ideal apartment!
+            After analyzing your thoughts and emotions, we found your ideal unit!
             <br class="break" />
             Bright, luxurius with wide areas to invite your colleagues and friends.
           </p>

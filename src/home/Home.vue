@@ -12,7 +12,7 @@
             class="home__main__intro__button animateIntro"
             @click.native="viewUnits"
             :variant="'secondary'"
-            >Explore apartments</v-button
+            >Explore units</v-button
           >
         </div>
       </div>
@@ -41,6 +41,7 @@
         />
       </div>
     </section>
+    <Footer></Footer>
   </div>
 </template>
 
