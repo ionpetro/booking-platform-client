@@ -1,6 +1,6 @@
 <template>
   <nav :class="['nav', 'body--large', scrollPosition ? 'nav__scrolled' : '']">
-    <img class="nav__logo" src="@/assets/images/blue.png" alt="LogoBlue" />
+    <img class="nav__logo" src="@/assets/icons/blue.svg" alt="LogoBlue" />
     <div @click="toggleMobileNav" :class="['nav__icon', openMobileNav ? 'active' : '']">
       <span class="bar"></span>
       <span class="bar"></span>

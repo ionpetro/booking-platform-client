@@ -9,7 +9,7 @@
         <img class="hero-big" src="@/assets/images/hero-big.png" alt="hero-big" />
       </div>
       <div class="content">
-        <img class="logo" src="@/assets/images/blue.png" alt="logo" />
+        <img class="logo" src="@/assets/icons/blue.svg" alt="logo" />
         <h1 class="heading">Welcome to Mars era</h1>
         <transition name="fade">
           <v-message type="error" v-if="message">{{ message }}</v-message>
